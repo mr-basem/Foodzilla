@@ -5,3 +5,7 @@ desktop.ini
 
 # Temporary capture videos and archives
 Captures/
+
+# Internal docs & presentation notes
+TECHNICAL_GUIDE.md
+AFRO_ASIAN_FORUM_QA.md

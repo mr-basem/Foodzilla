@@ -36,8 +36,6 @@ abdo/
 ├── style.css                # Godzilla theme, styling & animations
 ├── project.js               # Recipes database (data structures)
 ├── app.js                   # Logic engine, search, cart & DOM
-├── AFRO_ASIAN_FORUM_QA.md   # Presentation Q&A for Afro-Asian Forum 2026
-├── TECHNICAL_GUIDE.md       # Technical documentation & code walkthrough
 └── README.md                # Project overview & documentation
 ```
 
