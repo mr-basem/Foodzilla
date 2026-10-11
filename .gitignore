@@ -1,0 +1,7 @@
+# OS and temporary files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Temporary capture videos and archives
+Captures/

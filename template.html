@@ -1,0 +1,437 @@
+`````````````````````````````````````````````````````````````````````````````<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع الوصفات الصحية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            background: white;
+            color: #667eea;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .category-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .category-btn.active {
+            background: #764ba2;
+            color: white;
+        }
+
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .recipe-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .recipe-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+
+        .recipe-content {
+            padding: 20px;
+        }
+
+        .recipe-content h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .recipe-content p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 1.5em;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-body h4 {
+            color: #667eea;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .modal-body ul {
+            margin-right: 20px;
+        }
+
+        .modal-body li {
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .empty-state {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .empty-state h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ موقع الوصفات الصحية</h1>
+            <p>اختار الفئة المناسبة واستكشف وصفات لذيذة</p>
+        </header>
+
+        <div class="categories" id="categories">
+            <button class="category-btn active" data-category="all">الكل</button>
+            <button class="category-btn" data-category="carbs">كاربوهيدرات</button>
+            <button class="category-btn" data-category="proteins">بروتينات</button>
+            <button class="category-btn" data-category="fruits">فواكه</button>
+            <button class="category-btn" data-category="vegetables">خضروات</button>
+        </div>
+
+        <div class="recipes-grid" id="recipesGrid"></div>
+    </div>
+
+    <div class="modal" id="recipeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-btn" onclick="closeModal()">×</button>
+                <h2 id="modalTitle"></h2>
+                <div id="modalIcon" style="font-size: 3em; margin-top: 10px;"></div>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script>
+        const recipes = {
+            carbs: [
+                {
+                    name: 'أرز بالخضار',
+                    icon: '🍚',
+                    description: 'أرز صحي مطبوخ مع خضروات طازجة',
+                    ingredients: ['كوبين أرز', 'جزر مقطع', 'بازلاء', 'ذرة', 'بصل', 'ثوم', 'ملح وفلفل'],
+                    steps: ['اغسل الأرز جيداً', 'سخن الزيت وحمر البصل والثوم', 'أضف الخضروات وقلبها', 'أضف الأرز والماء', 'اترك على نار هادئة لمدة 20 دقيقة']
+                },
+                {
+                    name: 'معكرونة بالصلصة',
+                    icon: '🍝',
+                    description: 'معكرونة إيطالية بصلصة الطماطم',
+                    ingredients: ['500 جم معكرونة', 'طماطم مهروسة', 'ثوم', 'ريحان طازج', 'زيت زيتون', 'جبن بارميزان'],
+                    steps: ['اسلق المعكرونة في ماء مملح', 'حضر الصلصة بالثوم والطماطم', 'أضف الريحان', 'اخلط المعكرونة مع الصلصة', 'زين بالجبن']
+                },
+                {
+                    name: 'خبز محمص بالأفوكادو',
+                    icon: '🥪',
+                    description: 'توست صحي بالأفوكادو الطازج',
+                    ingredients: ['شرائح خبز توست', 'حبة أفوكادو ناضجة', 'ليمون', 'ملح وفلفل', 'بيض مسلوق'],
+                    steps: ['حمص شرائح الخبز', 'اهرس الأفوكادو مع الليمون', 'افرد الأفوكادو على الخبز', 'أضف البيض المقطع', 'رش ملح وفلفل']
+                }
+            ],
+            proteins: [
+                {
+                    name: 'دجاج مشوي',
+                    icon: '🍗',
+                    description: 'صدور دجاج مشوية بالتتبيلة',
+                    ingredients: ['صدور دجاج', 'زبادي', 'ليمون', 'ثوم', 'بهارات مشكلة', 'زيت زيتون'],
+                    steps: ['تبل الدجاج بالزبادي والبهارات', 'اتركه ساعتين في الثلاجة', 'سخن الشواية', 'اشوِ الدجاج حتى ينضج', 'قدمه ساخناً']
+                },
+                {
+                    name: 'سمك مقلي',
+                    icon: '🐟',
+                    description: 'سمك طازج مقلي ومقرمش',
+                    ingredients: ['سمك فيليه', 'دقيق', 'بيض', 'بقسماط', 'ملح وكمون', 'ليمون'],
+                    steps: ['تبل السمك بالملح والكمون', 'غمس في الدقيق ثم البيض ثم البقسماط', 'سخن الزيت جيداً', 'اقلِ السمك حتى يصبح ذهبياً', 'صفيه وقدمه مع الليمون']
+                },
+                {
+                    name: 'بيض أومليت',
+                    icon: '🍳',
+                    description: 'أومليت بالخضروات والجبن',
+                    ingredients: ['3 بيضات', 'فلفل رومي ملون', 'بصل أخضر', 'جبن', 'ملح وفلفل', 'زبدة'],
+                    steps: ['اخفق البيض جيداً', 'أضف الخضروات المقطعة', 'سخن الزبدة في المقلاة', 'اسكب الخليط', 'أضف الجبن واطوِ الأومليت']
+                }
+            ],
+            fruits: [
+                {
+                    name: 'سلطة فواكه',
+                    icon: '🥗',
+                    description: 'خليط منعش من الفواكه الموسمية',
+                    ingredients: ['تفاح', 'برتقال', 'موز', 'فراولة', 'عنب', 'عصير ليمون', 'عسل'],
+                    steps: ['قطع جميع الفواكه لمكعبات', 'ضعها في وعاء كبير', 'أضف عصير الليمون', 'أضف ملعقة عسل', 'قلب برفق وقدمها باردة']
+                },
+                {
+                    name: 'عصير استوائي',
+                    icon: '🍹',
+                    description: 'عصير منعش بالفواكه الاستوائية',
+                    ingredients: ['مانجو', 'أناناس', 'موز', 'حليب جوز الهند', 'ثلج', 'عسل'],
+                    steps: ['قشر وقطع الفواكه', 'ضعها في الخلاط', 'أضف حليب جوز الهند', 'أضف الثلج', 'اخلط حتى يصبح ناعماً']
+                },
+                {
+                    name: 'تارت الفواكه',
+                    icon: '🥧',
+                    description: 'تارت لذيذة محشوة بالفواكه الطازجة',
+                    ingredients: ['عجينة جاهزة', 'كريمة باتيسيير', 'فراولة', 'كيوي', 'توت', 'جيلي شفاف'],
+                    steps: ['اخبز القاعدة حتى تصبح ذهبية', 'اتركها تبرد تماماً', 'افرد الكريمة', 'رتب الفواكه بشكل جميل', 'ادهن الجيلي للتلميع']
+                }
+            ],
+            vegetables: [
+                {
+                    name: 'سلطة خضراء',
+                    icon: '🥬',
+                    description: 'سلطة طازجة بالخضروات الورقية',
+                    ingredients: ['خس', 'جرجير', 'طماطم', 'خيار', 'فلفل', 'زيت زيتون', 'خل وليمون'],
+                    steps: ['اغسل الخضروات جيداً', 'قطعها لقطع مناسبة', 'ضعها في وعاء', 'حضر التتبيلة', 'أضف التتبيلة وقلب']
+                },
+                {
+                    name: 'خضار مشوي',
+                    icon: '🥕',
+                    description: 'خضروات مشكلة مشوية بالفرن',
+                    ingredients: ['كوسة', 'باذنجان', 'فلفل رومي', 'بصل', 'ثوم', 'زيت زيتون', 'بهارات'],
+                    steps: ['قطع الخضار لقطع متساوية', 'تبلها بالزيت والبهارات', 'رتبها في صينية الفرن', 'اشويها على حرارة 200 درجة', 'قلبها مرة واحدة أثناء الطهي']
+                },
+                {
+                    name: 'شوربة خضار',
+                    icon: '🍲',
+                    description: 'شوربة دافئة مغذية بالخضروات',
+                    ingredients: ['جزر', 'بطاطس', 'كوسة', 'بصل', 'طماطم', 'مرق خضار', 'بهارات'],
+                    steps: ['حمر البصل في قليل من الزيت', 'أضف الخضروات المقطعة', 'أضف المرق والبهارات', 'اتركها تغلي لمدة 30 دقيقة', 'اخلطها أو قدمها كما هي']
+                }
+            ]
+        };
+
+        let currentCategory = 'all';
+
+        function displayRecipes(category) {
+            const grid = document.getElementById('recipesGrid');
+            grid.innerHTML = '';
+
+            let recipesToShow = [];
+            
+            if (category === 'all') {
+                Object.values(recipes).forEach(categoryRecipes => {
+                    recipesToShow = recipesToShow.concat(categoryRecipes);
+                });
+            } else {
+                recipesToShow = recipes[category] || [];
+            }
+
+            if (recipesToShow.length === 0) {
+                grid.innerHTML = '<div class="empty-state"><h2>لا توجد وصفات في هذه الفئة</h2></div>';
+                return;
+            }
+
+            recipesToShow.forEach((recipe, index) => {
+                const card = document.createElement('div');
+                card.className = 'recipe-card';
+                card.onclick = () => showRecipeDetails(recipe);
+                
+                card.innerHTML = `
+                    <div class="recipe-image">${recipe.icon}</div>
+                    <div class="recipe-content">
+                        <h3>${recipe.name}</h3>
+                        <p>${recipe.description}</p>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        function showRecipeDetails(recipe) {
+            const modal = document.getElementById('recipeModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalIcon = document.getElementById('modalIcon');
+            const modalBody = document.getElementById('modalBody');
+
+            modalTitle.textContent = recipe.name;
+            modalIcon.textContent = recipe.icon;
+            
+            let bodyHTML = `<p style="font-size: 1.1em; color: #666; margin-bottom: 20px;">${recipe.description}</p>`;
+            
+            bodyHTML += '<h4>المقادير:</h4><ul>';
+            recipe.ingredients.forEach(ingredient => {
+                bodyHTML += `<li>${ingredient}</li>`;
+            });
+            bodyHTML += '</ul>';
+            
+            bodyHTML += '<h4>طريقة التحضير:</h4><ol>';
+            recipe.steps.forEach(step => {
+                bodyHTML += `<li>${step}</li>`;
+            });
+            bodyHTML += '</ol>';
+            
+            modalBody.innerHTML = bodyHTML;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('recipeModal').classList.remove('active');
+        }
+
+        document.getElementById('categories').addEventListener('click', (e) => {
+            if (e.target.classList.contains('category-btn')) {
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                e.target.classList.add('active');
+                
+                const category = e.target.getAttribute('data-category');
+                currentCategory = category;
+                displayRecipes(category);
+            }
+        });
+
+        document.getElementById('recipeModal').addEventListener('click', (e) => {
+            if (e.target.id === 'recipeModal') {
+                closeModal();
+            }
+        });
+
+        displayRecipes('all');
+    </script>
+</body>
+</html>
