@@ -2,7 +2,7 @@ const recipes = {
   protein: [
     {
       name: "grilled chicken salad",
-      icon: "download (40).jpg",
+      icon: "images/download (40).jpg",
       price: 315,
       ingredients: ["chicken breast", "romaine lettuce", "cherry tomatoes", "cucumbers", "olive oil", "lemon juice"],
       calories: 420,
@@ -17,7 +17,7 @@ const recipes = {
     },
     {
       name: "baked salmon bowl",
-      icon: "download (41).jpg",
+      icon: "images/download (41).jpg",
       price: 160,
       ingredients: ["salmon fillet", "quinoa", "avocado", "edamame", "soy sauce", "sesame seeds"],
       calories: 540,
@@ -33,7 +33,7 @@ const recipes = {
     },
     {
       name: "steak burrito bowl",
-      icon: "download (42).jpg",
+      icon: "images/download (42).jpg",
       price: 310,
       ingredients: ["sirloin steak", "black beans", "brown rice", "corn", "salsa", "cilantro"],
       calories: 610,
@@ -49,7 +49,7 @@ const recipes = {
     },
     {
       name: "tofu stir fry",
-      icon: "download (43).jpg",
+      icon: "images/download (43).jpg",
       price: 120,
       ingredients: ["firm tofu", "broccoli", "bell peppers", "carrots", "ginger", "garlic", "soy sauce"],
       calories: 480,
@@ -67,7 +67,7 @@ const recipes = {
   dairy: [
     {
       name: "mac and cheese",
-      icon: "download (44).jpg",
+      icon: "images/download (44).jpg",
       price: 250,
       ingredients: ["macaroni noodles", "cheddar cheese", "milk", "butter", "flour"],
       calories: 560,
@@ -82,7 +82,7 @@ const recipes = {
     },
     {
       name: "greek yogurt parfait",
-      icon: "download (45).jpg",
+      icon: "images/download (45).jpg",
       price: 75,
       ingredients: ["greek yogurt", "honey", "granola", "mixed berries"],
       calories: 320,
@@ -96,7 +96,7 @@ const recipes = {
     },
     {
       name: "cheese fondue",
-      icon: "download (33).jpg",
+      icon: "images/download (33).jpg",
       price: 400,
       ingredients: ["swiss cheese", "gruyere cheese", "garlic", "cornstarch", "bread cubes"],
       calories: 470,
@@ -111,7 +111,7 @@ const recipes = {
     },
     {
       name: "mozzarella sticks",
-      icon: "download (32).jpg",
+      icon: "images/download (32).jpg",
       price: 50,
       ingredients: ["mozzarella cheese blocks", "flour", "eggs", "breadcrumbs", "italian seasoning", "oil"],
       calories: 390,
@@ -126,7 +126,7 @@ const recipes = {
     },
     {
       name: "creamy alfredo sauce",
-      icon: "download (38).jpg",
+      icon: "images/download (38).jpg",
       price: 65,
       ingredients: ["heavy cream", "butter", "garlic", "parmesan cheese", "black pepper"],
       calories: 430,
@@ -143,7 +143,7 @@ const recipes = {
   carbs: [
     {
       name: "beshamel pasta",
-      icon: "download (10).png",
+      icon: "images/download (10).png",
       price: 270,
       ingredients: ["pasta", "milk", "flour", "butter", "cheese"],
       calories: 620,
@@ -157,7 +157,7 @@ const recipes = {
     },
     {
       name: "spagetti",
-      icon: "download (11).jpg",
+      icon: "images/download (11).jpg",
       price: 200,
       ingredients: ["spagetti", "tomato sauce", "garlic", "olive oil", "parmesan"],
       calories: 540,
@@ -171,7 +171,7 @@ const recipes = {
     },
     {
       name: "donut",
-      icon: "download (14).jpg",
+      icon: "images/download (14).jpg",
       price: 60,
       ingredients: ["doughnut dough", "oil for frying", "sugar", "cinnamon"],
       calories: 310,
@@ -187,7 +187,7 @@ const recipes = {
     },
     {
       name: "Spongebob burger",
-      icon: "download (12).jpg",
+      icon: "images/download (12).jpg",
       price: 155,
       ingredients: ["burger buns", "ground beef", "lettuce", "tomato", "cheese", "condiments"],
       calories: 680,
@@ -201,7 +201,7 @@ const recipes = {
     },
     {
       name: "pizza",
-      icon: "download (13).jpg",
+      icon: "images/download (13).jpg",
       price: 275,
       ingredients: ["pizza dough", "tomato sauce", "mozzarella cheese", "pepperoni", "mushrooms"],
       calories: 720,
@@ -216,7 +216,7 @@ const recipes = {
     },
     {
       name: "fried chicken",
-      icon: "download (39).jpg",
+      icon: "images/download (39).jpg",
       price: 300,
       ingredients: ["chicken pieces", "buttermilk", "flour", "spices", "oil for frying"],
       calories: 530,
@@ -233,7 +233,7 @@ const recipes = {
     },
     {
       name: "garlic bread",
-      icon: "download (29).jpg",
+      icon: "images/download (29).jpg",
       price: 55,
       ingredients: ["baguette", "butter", "garlic cloves", "parsley", "parmesan cheese"],
       calories: 350,
@@ -251,7 +251,7 @@ const recipes = {
   sweets: [
     {
       name: "chocolate cake",
-      icon: "download (17).jpg",
+      icon: "images/download (17).jpg",
       price: 70,
       ingredients: ["flour", "sugar", "cocoa powder", "eggs", "butter", "baking powder"],
       calories: 420,
@@ -268,7 +268,7 @@ const recipes = {
     },
     {
       name: "pancake",
-      icon: "download (18).jpg",
+      icon: "images/download (18).jpg",
       price: 65,
       ingredients: ["flour", "milk", "eggs", "sugar", "baking powder", "butter"],
       calories: 280,
@@ -285,7 +285,7 @@ const recipes = {
     },
     {
       name: "sweet crepes",
-      icon: "download (19).jpg",
+      icon: "images/download (19).jpg",
       price: 125,
       ingredients: ["flour", "milk", "eggs", "sugar", "butter"],
       calories: 260,
@@ -300,7 +300,7 @@ const recipes = {
     },
     {
       name: "golden balls fried sweets",
-      icon: "download (20).jpg",
+      icon: "images/download (20).jpg",
       price: 50,
       ingredients: ["flour", "sugar", "yeast", "water", "oil for frying"],
       calories: 300,
@@ -317,7 +317,7 @@ const recipes = {
     },
     {
       name: "cookie",
-      icon: "download (21).jpg",
+      icon: "images/download (21).jpg",
       price: 20,
       ingredients: ["flour", "sugar", "butter", "eggs", "baking soda", "chocolate chips"],
       calories: 220,
@@ -334,7 +334,7 @@ const recipes = {
     },
     {
       name: "fudge brownies",
-      icon: "download (30).jpg",
+      icon: "images/download (30).jpg",
       price: 65,
       ingredients: ["melted butter", "sugar", "cocoa powder", "eggs", "flour", "chocolate chunks"],
       calories: 350,
@@ -349,7 +349,7 @@ const recipes = {
     },
     {
       name: "cinnamon rolls",
-      icon: "images (4).jpg",
+      icon: "images/images (4).jpg",
       price: 55,
       ingredients: ["yeast dough", "butter", "brown sugar", "cinnamon", "powdered sugar cream"],
       calories: 370,
@@ -364,7 +364,7 @@ const recipes = {
     },
     {
       name: "apple pie",
-      icon: "jpg.jpg",
+      icon: "images/jpg.jpg",
       price: 75,
       ingredients: ["pie crust", "apples sliced", "sugar", "cinnamon", "butter pieces"],
       calories: 420,
@@ -382,7 +382,7 @@ const recipes = {
   fruits: [
     {
       name: "fruit salad",
-      icon: "download (22).jpg",
+      icon: "images/download (22).jpg",
       price: 110,
       ingredients: ["apples", "bananas", "strawberries", "blueberries", "grapes"],
       calories: 220,
@@ -397,7 +397,7 @@ const recipes = {
     },
     {
       name: "cocktail",
-      icon: "download (23).jpg",
+      icon: "images/download (23).jpg",
       price: 70,
       ingredients: ["orange juice", "pineapple juice", "grenadine", "ice", "fruit slices"],
       calories: 260,
@@ -411,7 +411,7 @@ const recipes = {
     },
     {
       name: "smoothie",
-      icon: "download (24).jpg",
+      icon: "images/download (24).jpg",
       price: 55,
       ingredients: ["bananas", "strawberries", "yogurt", "honey", "ice"],
       calories: 290,
@@ -424,7 +424,7 @@ const recipes = {
     },
     {
       name: "banana bread",
-      icon: "download (25).jpg",
+      icon: "images/download (25).jpg",
       price: 65,
       ingredients: ["ripe bananas", "flour", "sugar", "eggs", "butter", "baking soda"],
       calories: 290,
@@ -441,7 +441,7 @@ const recipes = {
     },
     {
       name: "fruit curry",
-      icon: "download (26).jpg",
+      icon: "images/download (26).jpg",
       price: 20,
       ingredients: ["mixed fruits (apple, pineapple, mango)", "coconut milk", "curry powder", "onion", "garlic"],
       calories: 270,
@@ -456,7 +456,7 @@ const recipes = {
     },
     {
       name: "mango chia pudding",
-      icon: "images (3).png",
+      icon: "images/images (3).png",
       price: 120,
       ingredients: ["chia seeds", "almond milk", "maple syrup", "fresh mango puree"],
       calories: 240,
@@ -469,7 +469,7 @@ const recipes = {
     },
     {
       name: "strawberry sorbet",
-      icon: "images (4).png",
+      icon: "images/images (4).png",
       price: 30,
       ingredients: ["frozen strawberries", "honey", "lemon juice", "warm water"],
       calories: 170,

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Delivery - foodZILLA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ========================================================
+         TOP NAVIGATION BAR
+         ======================================================== -->
+    <nav class="top-nav">
+        <div class="top-logo"><a href="index.html" class="logo-link">🦖 food<span>ZILLA</span></a></div>
+        <div class="top-nav-links">
+            <a href="index.html" class="nav-link">🏠 Home</a>
+            <a href="index.html#categories" class="nav-link">🥗 Menu</a>
+            <a href="contact.html" class="nav-link active">📞 Contact & Delivery</a>
+            <a href="opinion.html" class="nav-link">⭐ Opinions</a>
+            <a href="how-to-use.html" class="nav-link">📖 How to Use</a>
+        </div>
+        <div class="top-nav-actions">
+            <a href="tel:19844" class="nav-hotline-pill" title="Call Hotline 19844">📞 19844</a>
+            <button class="account-btn" id="accountButton" onclick="showSignIn()">Sign in</button>
+            <button class="top-cart-btn" onclick="toggleCart()">
+                🛒 Cart <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================================
+         MAIN CONTAINER
+         ======================================================== -->
+    <div class="container">
+        <!-- GODZILLA HEADER SCENE -->
+        <header>
+            <div class="lightning-flash"></div>
+            <svg class="godzilla-monster" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 5 100 
+             C 5 95, 2 92, 4 88 
+             C 2 85, 3 80, 7 76 
+             C 5 73, 6 68, 11 65 
+             C 9 60, 13 55, 18 52 
+             C 16 48, 20 44, 25 41 
+             C 23 35, 29 30, 36 28 
+             C 38 22, 45 18, 54 16 
+             C 56 12, 64 8, 72 6 
+             C 74 2, 79 0, 84 2 
+             C 86 5, 84 10, 81 14 
+             C 85 15, 88 18, 86 22 
+             C 90 24, 92 28, 89 32 
+             C 93 36, 91 42, 86 46 
+             C 84 50, 80 54, 83 60 
+             C 79 66, 75 72, 78 78 
+             C 73 84, 70 92, 74 100 
+             Z" fill="#05070a" />
+                <path d="M 12 70 L 6 66 L 15 62 L 10 55 L 20 52 L 15 44 L 26 42 L 21 34 L 32 32 L 28 22 L 40 22 L 36 12 L 48 15 L 45 5 L 56 10 L 54 2 L 64 6 L 68 0 L 73 8 L 78 2 L 81 10" fill="#05070a" />
+                <path d="M 81 14 L 92 8 L 95 18 L 88 20 C 85 18, 83 16, 81 14 Z M 83 24 L 94 28 L 91 35 C 87 33, 85 30, 83 24 Z" fill="#05070a" />
+            </svg>
+            <div class="atomic-fire-beam"></div>
+
+            <div class="header-content">
+                <h1>Contact & Delivery</h1>
+                <p>Hotline, branch locations on Google Maps, quick menu & delivery rates across Egypt</p>
+            </div>
+
+            <div class="skyline-buildings"></div>
+        </header>
+
+        <!-- ====================================================
+             1. HOTLINE NUMBER SECTION
+             ==================================================== -->
+        <section class="contact-section">
+            <div class="hotline-hero-card">
+                <div class="hotline-badge-top">
+                    <span>🔥 NATIONWIDE ORDER HOTLINE • 24/7 DISPATCH</span>
+                </div>
+
+                <div class="section-title-wrap" style="margin-bottom: 10px;">
+                    <h2 class="section-title">Hungry Like Godzilla? Call Us Now!</h2>
+                    <p class="section-subtitle">Place your order directly over the phone or message us on WhatsApp for rapid doorstep delivery.</p>
+                </div>
+
+                <div class="hotline-main-number-wrap">
+                    <a href="tel:19844" class="hotline-number-display" title="Click to call Hotline 19844">
+                        <span class="phone-icon">📞</span> 19844
+                    </a>
+                </div>
+
+                <div class="hotline-buttons-row">
+                    <a href="tel:19844" class="btn-hotline-call">
+                        <span>📞</span> Call Hotline: 19844
+                    </a>
+                    <a href="https://wa.me/201012345678?text=Hello%20FoodZILLA,%20I%20would%20like%20to%20place%20an%20order" target="_blank" rel="noopener noreferrer" class="btn-hotline-whatsapp">
+                        <span>💬</span> WhatsApp Order
+                    </a>
+                    <button type="button" class="btn-hotline-copy" onclick="copyHotline()">
+                        <span id="copyIcon">📋</span> <span id="copyText">Copy Number</span>
+                    </button>
+                </div>
+
+                <div class="hotline-perks-strip">
+                    <div class="hotline-perk">
+                        <span class="hotline-perk-icon">⏱️</span>
+                        <span>Answered in &lt; 30 seconds</span>
+                    </div>
+                    <div class="hotline-perk">
+                        <span class="hotline-perk-icon">🛵</span>
+                        <span>Kitchen dispatch within 10 mins</span>
+                    </div>
+                    <div class="hotline-perk">
+                        <span class="hotline-perk-icon">🥗</span>
+                        <span>Fresh & hot thermal packaging</span>
+                    </div>
+                    <div class="hotline-perk">
+                        <span class="hotline-perk-icon">💳</span>
+                        <span>Cash / Visa on Delivery / Instapay</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             2. HORIZONTAL MENU (Small Picture, Name, and Price)
+             ==================================================== -->
+        <section class="contact-section">
+            <div class="hmenu-section-container">
+                <div class="section-title-wrap">
+                    <span class="section-kicker">Quick Order Strip</span>
+                    <h2 class="section-title">🍱 Horizontal Express Menu</h2>
+                    <p class="section-subtitle">Swipe horizontally to pick healthy recipes with small pictures, names, and prices. Add to your cart with one click!</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="hmenu-filter-bar" id="hmenuFilterBar">
+                    <button class="hmenu-filter-btn active" data-category="all">All Items</button>
+                    <button class="hmenu-filter-btn" data-category="protein">Protein</button>
+                    <button class="hmenu-filter-btn" data-category="carbs">Carbs</button>
+                    <button class="hmenu-filter-btn" data-category="dairy">Dairy</button>
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="hmenu-carousel-controls">
+                    <div class="hmenu-scroll-hint">
+                        <span>👈 Scroll or drag items horizontally 👉</span>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="hmenu-scroll-btn" onclick="scrollHMenu(-320)" aria-label="Scroll left">◀</button>
+                        <button class="hmenu-scroll-btn" onclick="scrollHMenu(320)" aria-label="Scroll right">▶</button>
+                    </div>
+                </div>
+
+                <!-- Horizontal Scroll Track -->
+                <div class="horizontal-menu-track" id="horizontalMenuTrack">
+                    <!-- Populated by JavaScript from recipes database -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             3. INTERACTIVE MAP SECTION (Clicks open on Google Maps)
+             ==================================================== -->
+        <section class="contact-section">
+            <div class="map-card-wrapper">
+                <div class="section-title-wrap">
+                    <span class="section-kicker">Find Our Kitchens</span>
+                    <h2 class="section-title">📍 Central Kitchen & Hub Locations</h2>
+                    <p class="section-subtitle">Click anywhere on the map to open the live directions in Google Maps!</p>
+                </div>
+
+                <!-- Branch Tabs -->
+                <div class="branch-nav-tabs">
+                    <button class="branch-tab-btn active" onclick="switchBranch('mohandessin')">🏢 Mohandessin HQ (Giza)</button>
+                    <button class="branch-tab-btn" onclick="switchBranch('newcairo')">🏙️ New Cairo - 5th Settlement</button>
+                    <button class="branch-tab-btn" onclick="switchBranch('alex')">🌊 Alexandria Corniche Hub</button>
+                    <button class="branch-tab-btn" onclick="switchBranch('aswan')">🏛️ Aswan Afro-Asian Hub</button>
+                </div>
+
+                <!-- Clickable Map Container (Clicks open in Google Maps) -->
+                <a id="googleMapsLink" href="https://www.google.com/maps/search/?api=1&query=FoodZILLA+Restaurant+Mohandessin+Giza+Egypt" target="_blank" rel="noopener noreferrer" class="interactive-map-link" title="Click anywhere to open in Google Maps">
+                    <div class="map-floating-overlay">
+                        <span>🗺️ Click to Open in Google Maps ↗</span>
+                    </div>
+
+                    <iframe id="mapFrame" src="https://maps.google.com/maps?q=Mohandessin%20Giza%20Egypt&t=&z=15&ie=UTF8&iwloc=&output=embed" title="FoodZILLA Branch Map" loading="lazy"></iframe>
+
+                    <div class="map-click-banner">
+                        <div class="map-location-meta">
+                            <h4 id="branchNameDisplay">🦖 FoodZILLA Central Kitchen & Headquarters</h4>
+                            <p id="branchAddressDisplay">📍 45 El-Batal Ahmed Abdel Aziz, Mohandessin, Giza | Open 24/7</p>
+                        </div>
+                        <span class="map-action-badge">📍 Open in Google Maps ↗</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             4. DELIVERY PRICES SECTION
+             ==================================================== -->
+        <section class="contact-section">
+            <div class="delivery-pricing-card">
+                <div class="section-title-wrap">
+                    <span class="section-kicker">Fast & Transparent</span>
+                    <h2 class="section-title">🛵 Delivery Zones & Pricing</h2>
+                    <p class="section-subtitle">Flat-rate pricing by zone with temperature-preserving thermal containers and instant GPS courier tracking.</p>
+                </div>
+
+                <!-- Live Price Calculator -->
+                <div class="delivery-calc-box">
+                    <div class="calc-input-group">
+                        <label for="zoneSelector">Select Your City / Delivery Area:</label>
+                        <select id="zoneSelector" class="calc-select" onchange="calculateDeliveryPrice()">
+                            <option value="30|25-35 mins|Cairo Central (Downtown, Zamalek, Dokki, Mohandessin)">Cairo Central (Zamalek, Downtown, Dokki, Mohandessin) - 30 EGP</option>
+                            <option value="35|35-45 mins|Greater Giza (Haram, Faisal, 6th of October, Sheikh Zayed)">Greater Giza (Haram, 6th of October, Sheikh Zayed) - 35 EGP</option>
+                            <option value="40|40-50 mins|East Cairo (New Cairo, Tagamoa, Rehab, Madinaty, Heliopolis)">East Cairo (New Cairo, Tagamoa, Rehab, Heliopolis) - 40 EGP</option>
+                            <option value="45|45-60 mins|Alexandria (Smouha, Corniche, Stanley, Miami)">Alexandria (Corniche, Smouha, Miami, Stanley) - 45 EGP</option>
+                            <option value="50|60-75 mins|Delta & Canal Cities (Tanta, Mansoura, Ismailia, Port Said)">Delta & Canal (Mansoura, Tanta, Ismailia, Port Said) - 50 EGP</option>
+                            <option value="55|70-90 mins|Upper Egypt & Aswan (Fayoum, Minya, Luxor, Aswan)">Upper Egypt & Aswan - 55 EGP</option>
+                            <option value="60|Under 30 mins|Express Beast Turbo Delivery (Priority Dispatch)">⚡ Express Beast Turbo Delivery (&lt; 30 mins) - 60 EGP</option>
+                        </select>
+                    </div>
+
+                    <div class="calc-result-display">
+                        <div>
+                            <div class="calc-stat-label">Delivery Fee</div>
+                            <div class="calc-stat-value" id="calcFee">30 EGP</div>
+                        </div>
+                        <div style="border-left: 1px solid rgba(255,170,84,0.3); height: 40px;"></div>
+                        <div>
+                            <div class="calc-stat-label">Estimated Time</div>
+                            <div class="calc-stat-value" id="calcTime" style="font-size: 1.4rem; color: #ffcc91;">25-35 mins</div>
+                            <div class="calc-stat-sub">🟢 Live Kitchen Active</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delivery Zones Grid -->
+                <div class="delivery-zones-grid">
+                    <!-- Zone 1 -->
+                    <div class="delivery-zone-card">
+                        <div class="zone-header">
+                            <h3 class="zone-title">Zone 1: Cairo Central</h3>
+                            <span class="zone-price-pill">30 EGP</span>
+                        </div>
+                        <p class="zone-areas-list">Zamalek, Mohandessin, Dokki, Downtown, Agouza, Garden City, Manial.</p>
+                        <div class="zone-meta-footer">
+                            <span class="zone-time-badge">⏱️ 25 - 35 mins</span>
+                            <span class="zone-status-badge">● Instant Dispatch</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 2 -->
+                    <div class="delivery-zone-card">
+                        <div class="zone-header">
+                            <h3 class="zone-title">Zone 2: Greater Giza</h3>
+                            <span class="zone-price-pill">35 EGP</span>
+                        </div>
+                        <p class="zone-areas-list">Haram, Faisal, Omraneya, 6th of October City, Sheikh Zayed City, Giza Square.</p>
+                        <div class="zone-meta-footer">
+                            <span class="zone-time-badge">⏱️ 35 - 45 mins</span>
+                            <span class="zone-status-badge">● Instant Dispatch</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 3 -->
+                    <div class="delivery-zone-card">
+                        <div class="zone-header">
+                            <h3 class="zone-title">Zone 3: East Cairo</h3>
+                            <span class="zone-price-pill">40 EGP</span>
+                        </div>
+                        <p class="zone-areas-list">New Cairo, 5th Settlement, Rehab, Madinaty, Heliopolis, Nasr City, Shorouk.</p>
+                        <div class="zone-meta-footer">
+                            <span class="zone-time-badge">⏱️ 40 - 50 mins</span>
+                            <span class="zone-status-badge">● Instant Dispatch</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 4 -->
+                    <div class="delivery-zone-card">
+                        <div class="zone-header">
+                            <h3 class="zone-title">Zone 4: Alexandria</h3>
+                            <span class="zone-price-pill">45 EGP</span>
+                        </div>
+                        <p class="zone-areas-list">Corniche, Smouha, Roushdy, Miami, Stanley, Gleem, San Stefano, Mandara.</p>
+                        <div class="zone-meta-footer">
+                            <span class="zone-time-badge">⏱️ 45 - 60 mins</span>
+                            <span class="zone-status-badge">● Daily Coast Express</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 5 -->
+                    <div class="delivery-zone-card">
+                        <div class="zone-header">
+                            <h3 class="zone-title">Zone 5: Delta & Canal</h3>
+                            <span class="zone-price-pill">50 EGP</span>
+                        </div>
+                        <p class="zone-areas-list">Mansoura, Tanta, Zagazig, Banha, Ismailia, Port Said, Suez.</p>
+                        <div class="zone-meta-footer">
+                            <span class="zone-time-badge">⏱️ 60 - 75 mins</span>
+                            <span class="zone-status-badge">● Regional Courier</span>
+                        </div>
+                    </div>
+
+                    <!-- Zone 6 -->
+                    <div class="delivery-zone-card">
+                        <div class="zone-header">
+                            <h3 class="zone-title">Zone 6: Upper Egypt</h3>
+                            <span class="zone-price-pill">55 EGP</span>
+                        </div>
+                        <p class="zone-areas-list">Beni Suef, Fayoum, Minya, Asyut, Sohag, Qena, Luxor, and Aswan.</p>
+                        <div class="zone-meta-footer">
+                            <span class="zone-time-badge">⏱️ 70 - 90 mins</span>
+                            <span class="zone-status-badge">● Inter-City Hub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Offers Banner -->
+                <div class="delivery-perks-banner">
+                    <div class="perk-item">
+                        <h4>🎁 Free Delivery Offer</h4>
+                        <p>Enjoy 100% FREE delivery on all orders over 500 EGP.</p>
+                    </div>
+                    <div class="perk-item">
+                        <h4>⚡ Beast Turbo Guarantee</h4>
+                        <p>Guaranteed hot food delivery or receive a complimentary coupon!</p>
+                    </div>
+                    <div class="perk-item">
+                        <h4>📱 Live SMS Tracking</h4>
+                        <p>Track your driver's motorbike live via real-time GPS link.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             5. CONTACT FORM & FAQ SECTION
+             ==================================================== -->
+        <section class="contact-section">
+            <div class="contact-bottom-grid">
+                <!-- Inquiry Form -->
+                <div class="contact-form-card">
+                    <h3>✉️ Send Us a Message</h3>
+                    <p>Have an inquiry, feedback, catering request, or corporate diet plan?</p>
+                    <form id="contactMessageForm" onsubmit="handleContactSubmit(event)">
+                        <div class="contact-form-grid">
+                            <label>Your Name
+                                <input type="text" id="contactName" placeholder="e.g. Basem Ahmed" required>
+                            </label>
+                            <label>Phone Number
+                                <input type="tel" id="contactPhone" placeholder="01012345678" pattern="[0-9]{10,15}" required>
+                            </label>
+                            <label>Inquiry Type
+                                <select id="contactSubject">
+                                    <option value="Order Status">Order Status Inquiry</option>
+                                    <option value="Delivery Question">Delivery Question</option>
+                                    <option value="Catering & Events">Catering & Corporate Nutrition</option>
+                                    <option value="Franchise">Franchise & Partnerships</option>
+                                    <option value="Feedback">Feedback & Suggestions</option>
+                                </select>
+                            </label>
+                            <label>Your Message
+                                <textarea id="contactMessage" rows="4" placeholder="How can the FoodZILLA team help you today?" required></textarea>
+                            </label>
+                            <button type="submit" class="btn-contact-submit">🦖 Send Message</button>
+                        </div>
+                        <div id="contactFormStatus" class="contact-form-msg"></div>
+                    </form>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="contact-faq-card">
+                    <h3>❓ Frequently Asked Questions</h3>
+                    <p class="faq-intro">Quick answers to common questions about our delivery and food.</p>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question"><span>📞 What are your Hotline working hours?</span><span>▾</span></div>
+                        <div class="faq-answer">Our hotline (19844) and online delivery kitchens operate 24 hours a day, 7 days a week, including holidays!</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><span>🛵 How are hot and cold foods kept fresh?</span><span>▾</span></div>
+                        <div class="faq-answer">All meals are sealed in eco-friendly, food-grade thermal containers designed to keep hot meals steaming and salads/fruits cold and crisp.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><span>💳 What payment methods are accepted?</span><span>▾</span></div>
+                        <div class="faq-answer">We accept Cash on Delivery, POS Credit/Debit card machines at your doorstep, and InstaPay transfers.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question"><span>🎁 How do I get Free Delivery?</span><span>▾</span></div>
+                        <div class="faq-answer">Any order of 500 EGP or more automatically qualifies for 0 EGP free delivery across all major governorates.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>🦖 <strong>foodZILLA</strong> — The Beast of Healthy Recipes & Fast Delivery.</p>
+            <p style="margin-top: 6px;">Hotline: <a href="tel:19844">19844</a> | Built for the Afro-Asian Youth Forum 2026 - Aswan.</p>
+        </footer>
+    </div>
+
+    <!-- ========================================================
+         SIGN IN MODAL
+         ======================================================== -->
+    <div class="account-overlay" id="accountOverlay" aria-hidden="true">
+        <section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+            <button class="account-close-btn" type="button" aria-label="Close" onclick="hideSignIn()">×</button>
+            <p class="account-kicker">FOODZILLA ACCOUNT</p>
+            <h2 id="accountTitle">Sign in</h2>
+            <p class="account-intro">Add your details for delivery.</p>
+            <form id="signInForm" class="account-form">
+                <label>Name
+                    <input name="name" type="text" autocomplete="name" required>
+                </label>
+                <label>Governorate
+                    <input name="governorate" type="text" autocomplete="address-level1" required>
+                </label>
+                <label>City
+                    <input name="city" type="text" autocomplete="address-level2" required>
+                </label>
+                <label>Address
+                    <input name="address" type="text" autocomplete="street-address" required>
+                </label>
+                <label>Phone number
+                    <input name="phone" type="tel" autocomplete="tel" required maxlength="11" pattern="[0-9]{10,15}" title="Please enter a valid phone number with 10 to 15 digits.">
+                </label>
+                <label>Password
+                    <span class="password-control">
+                        <input id="signInPassword" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="16" required>
+                        <button class="password-toggle" id="togglePassword" type="button" aria-label="Show password" aria-pressed="false" title="Show password">
+                            <svg class="eye-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-off-icon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.8 15.8 0 0 1-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10.7 10.7 0 0 0 4-.8"/></svg>
+                        </button>
+                    </span>
+                    <span class="field-hint">At least 8 characters and maximum 16 characters</span>
+                </label>
+                <p class="account-message" id="accountMessage" role="status"></p>
+                <button class="account-submit-btn" type="submit">Save details</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- ========================================================
+         CART DRAWER & OVERLAY
+         ======================================================== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart(false)"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 My Cart</h3>
+            <button class="cart-close-btn" onclick="toggleCart(false)">×</button>
+        </div>
+
+        <section class="cart-delivery" id="cartDelivery" aria-label="Delivery details"></section>
+
+        <div class="cart-items" id="cartItemsList"></div>
+
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotalPrice">0 EGP</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Delivery Fee:</span>
+                    <span id="cartDeliveryFee">0 EGP</span>
+                </div>
+                <div class="cart-total-row">
+                    <span>Total:</span>
+                    <span id="cartTotalPrice">0 EGP</span>
+                </div>
+            </div>
+            <div class="cart-footer-buttons">
+                <button class="btn-checkout" onclick="checkoutCart()">Buy Now</button>
+                <button class="btn-clear" onclick="clearCart()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/project.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        /* ==========================================================
+           CONTACT PAGE INTERACTIVE CONTROLLERS
+           ========================================================== */
+
+        // 1. Copy Hotline to Clipboard
+        function copyHotline() {
+            navigator.clipboard.writeText("19844").then(() => {
+                const copyText = document.getElementById('copyText');
+                const copyIcon = document.getElementById('copyIcon');
+                copyText.textContent = 'Copied!';
+                copyIcon.textContent = '✅';
+                setTimeout(() => {
+                    copyText.textContent = 'Copy Number';
+                    copyIcon.textContent = '📋';
+                }, 2500);
+            }).catch(() => {
+                alert("Hotline number is: 19844");
+            });
+        }
+
+        // 2. Branch Map Switcher
+        const branches = {
+            mohandessin: {
+                name: "🦖 FoodZILLA Central Kitchen & Headquarters",
+                address: "📍 45 El-Batal Ahmed Abdel Aziz, Mohandessin, Giza | Open 24/7",
+                mapSrc: "https://maps.google.com/maps?q=Mohandessin%20Giza%20Egypt&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                googleLink: "https://www.google.com/maps/search/?api=1&query=FoodZILLA+Mohandessin+Giza+Egypt"
+            },
+            newcairo: {
+                name: "🦖 FoodZILLA East Hub - 5th Settlement",
+                address: "📍 90th Street North, 5th Settlement, New Cairo | Open 24/7",
+                mapSrc: "https://maps.google.com/maps?q=90th%20street%20new%20cairo%20egypt&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                googleLink: "https://www.google.com/maps/search/?api=1&query=FoodZILLA+New+Cairo+Egypt"
+            },
+            alex: {
+                name: "🦖 FoodZILLA Mediterranean Hub - Alexandria",
+                address: "📍 El-Gaish Road, Corniche, Stanley, Alexandria | Open 24/7",
+                mapSrc: "https://maps.google.com/maps?q=stanley%20alexandria%20egypt&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                googleLink: "https://www.google.com/maps/search/?api=1&query=FoodZILLA+Stanley+Alexandria+Egypt"
+            },
+            aswan: {
+                name: "🦖 FoodZILLA Nile Hub - Aswan",
+                address: "📍 Corniche El Nile, Aswan City, Aswan | Afro-Asian Forum Partner",
+                mapSrc: "https://maps.google.com/maps?q=aswan%20corniche%20egypt&t=&z=15&ie=UTF8&iwloc=&output=embed",
+                googleLink: "https://www.google.com/maps/search/?api=1&query=FoodZILLA+Aswan+Egypt"
+            }
+        };
+
+        function switchBranch(key) {
+            const branch = branches[key];
+            if (!branch) return;
+
+            document.querySelectorAll('.branch-tab-btn').forEach(btn => btn.classList.remove('active'));
+            if (event && event.currentTarget) event.currentTarget.classList.add('active');
+
+            document.getElementById('branchNameDisplay').textContent = branch.name;
+            document.getElementById('branchAddressDisplay').textContent = branch.address;
+            document.getElementById('mapFrame').src = branch.mapSrc;
+            document.getElementById('googleMapsLink').href = branch.googleLink;
+        }
+
+        // 3. Populate Horizontal Menu (Small Picture, Name, and Price)
+        let activeHMenuCategory = 'all';
+
+        function renderHorizontalMenu(category = 'all') {
+            const track = document.getElementById('horizontalMenuTrack');
+            if (!track) return;
+
+            let items = [];
+            if (category === 'all') {
+                Object.values(recipes).forEach(catList => {
+                    items = items.concat(catList);
+                });
+            } else {
+                items = recipes[category] || [];
+            }
+
+            track.innerHTML = items.map((recipe) => {
+                const encodedName = encodeURIComponent(recipe.name);
+                return `
+                    <div class="horizontal-menu-card">
+                        <img class="hmenu-thumb" src="${recipe.icon}" alt="${recipe.name}">
+                        <div class="hmenu-details">
+                            <h4 class="hmenu-name" title="${recipe.name}">${recipe.name}</h4>
+                            <div class="hmenu-cal">🔥 ${recipe.calories || 0} kcal</div>
+                            <div class="hmenu-price">${recipe.price || 100} EGP</div>
+                        </div>
+                        <button class="hmenu-add-btn" onclick='addHorizontalItem("${encodedName}")'>+ Add</button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function addHorizontalItem(encodedName) {
+            const name = decodeURIComponent(encodedName);
+            let found = null;
+            Object.values(recipes).forEach(catList => {
+                const item = catList.find(r => r.name === name);
+                if (item) found = item;
+            });
+            if (found) {
+                addToCart(found);
+            }
+        }
+
+        function scrollHMenu(amount) {
+            const track = document.getElementById('horizontalMenuTrack');
+            if (track) {
+                track.scrollBy({ left: amount, behavior: 'smooth' });
+            }
+        }
+
+        // Horizontal Menu Filter Listener
+        const hmenuFilterBar = document.getElementById('hmenuFilterBar');
+        if (hmenuFilterBar) {
+            hmenuFilterBar.addEventListener('click', (e) => {
+                if (e.target.classList.contains('hmenu-filter-btn')) {
+                    document.querySelectorAll('.hmenu-filter-btn').forEach(b => b.classList.remove('active'));
+                    e.target.classList.add('active');
+                    activeHMenuCategory = e.target.getAttribute('data-category');
+                    renderHorizontalMenu(activeHMenuCategory);
+                }
+            });
+        }
+
+        // 4. Delivery Fee Calculator
+        function calculateDeliveryPrice() {
+            const selector = document.getElementById('zoneSelector');
+            const [fee, time] = selector.value.split('|');
+            document.getElementById('calcFee').textContent = fee + ' EGP';
+            document.getElementById('calcTime').textContent = time;
+        }
+
+        // 5. Contact Form Submit Simulation
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('contactName').value;
+            const subject = document.getElementById('contactSubject').value;
+            const status = document.getElementById('contactFormStatus');
+
+            status.textContent = `🦖 Thank you, ${name}! Your ${subject} inquiry has been received. Our team will contact you within 15 minutes!`;
+            document.getElementById('contactMessageForm').reset();
+
+            setTimeout(() => {
+                status.textContent = '';
+            }, 6000);
+        }
+
+        // Init on load
+        renderHorizontalMenu('all');
+    </script>
+</body>
+
+</html>

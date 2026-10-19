@@ -32,10 +32,18 @@
 
 ```
 abdo/
-├── index.html               # Main page layout & modals
-├── style.css                # Godzilla theme, styling & animations
-├── project.js               # Recipes database (data structures)
-├── app.js                   # Logic engine, search, cart & DOM
+├── index.html               # Main page layout & modals (Home & Menu)
+├── contact.html             # Contact, hotline & delivery details
+├── how-to-use.html          # Interactive step-by-step user guide
+├── opinion.html             # Customer opinions, reviews & ratings
+├── css/
+│   └── style.css            # Godzilla theme, styling & animations
+├── js/
+│   ├── app.js               # Logic engine, search, cart & DOM controllers
+│   └── project.js           # Recipes database (data structures)
+├── images/                  # Food & UI image assets (39 items)
+├── docs/                    # Showcase kit (poster, presentation, diagrams)
+├── archive/                 # Previous drafts and templates
 └── README.md                # Project overview & documentation
 ```
 

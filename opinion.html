@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Opinions & Reviews - foodZILLA</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ========================================================
+         TOP NAVIGATION BAR
+         ======================================================== -->
+    <nav class="top-nav">
+        <div class="top-logo"><a href="index.html" class="logo-link">🦖 food<span>ZILLA</span></a></div>
+        <div class="top-nav-links">
+            <a href="index.html" class="nav-link">🏠 Home</a>
+            <a href="index.html#categories" class="nav-link">🥗 Menu</a>
+            <a href="contact.html" class="nav-link">📞 Contact & Delivery</a>
+            <a href="opinion.html" class="nav-link active">⭐ Opinions</a>
+            <a href="how-to-use.html" class="nav-link">📖 How to Use</a>
+        </div>
+        <div class="top-nav-actions">
+            <a href="tel:19844" class="nav-hotline-pill" title="Call Hotline 19844">📞 19844</a>
+            <button class="account-btn" id="accountButton" onclick="showSignIn()">Sign in</button>
+            <button class="top-cart-btn" onclick="toggleCart()">
+                🛒 Cart <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================================
+         MAIN CONTAINER
+         ======================================================== -->
+    <div class="container">
+        <!-- GODZILLA HEADER SCENE -->
+        <header>
+            <div class="lightning-flash"></div>
+            <svg class="godzilla-monster" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 5 100 
+             C 5 95, 2 92, 4 88 
+             C 2 85, 3 80, 7 76 
+             C 5 73, 6 68, 11 65 
+             C 9 60, 13 55, 18 52 
+             C 16 48, 20 44, 25 41 
+             C 23 35, 29 30, 36 28 
+             C 38 22, 45 18, 54 16 
+             C 56 12, 64 8, 72 6 
+             C 74 2, 79 0, 84 2 
+             C 86 5, 84 10, 81 14 
+             C 85 15, 88 18, 86 22 
+             C 90 24, 92 28, 89 32 
+             C 93 36, 91 42, 86 46 
+             C 84 50, 80 54, 83 60 
+             C 79 66, 75 72, 78 78 
+             C 73 84, 70 92, 74 100 
+             Z" fill="#05070a" />
+                <path d="M 12 70 L 6 66 L 15 62 L 10 55 L 20 52 L 15 44 L 26 42 L 21 34 L 32 32 L 28 22 L 40 22 L 36 12 L 48 15 L 45 5 L 56 10 L 54 2 L 64 6 L 68 0 L 73 8 L 78 2 L 81 10" fill="#05070a" />
+                <path d="M 81 14 L 92 8 L 95 18 L 88 20 C 85 18, 83 16, 81 14 Z M 83 24 L 94 28 L 91 35 C 87 33, 85 30, 83 24 Z" fill="#05070a" />
+            </svg>
+            <div class="atomic-fire-beam"></div>
+
+            <div class="header-content">
+                <h1>Customer Opinions</h1>
+                <p>Rate FoodZILLA 1 to 5 stars, share your optional feedback, and send your review directly to our kitchen!</p>
+            </div>
+
+            <div class="skyline-buildings"></div>
+        </header>
+
+        <!-- ====================================================
+             TOP SECTION: STATS OVERVIEW + RATING FORM
+             ==================================================== -->
+        <section class="opinion-top-grid">
+            <!-- Left: Restaurant Rating Overview -->
+            <div class="opinion-stats-card">
+                <div>
+                    <span class="section-kicker">Overall Score</span>
+                    <div class="opinion-score-huge" id="avgScoreDisplay">4.9</div>
+                    <div class="opinion-stars-display">★★★★★</div>
+                    <p class="opinion-total-count" id="totalReviewsCount">Based on 1,428 verified customer opinions</p>
+
+                    <!-- Star Distribution Bars -->
+                    <div class="star-bars-container">
+                        <div class="star-bar-row">
+                            <span class="star-bar-label">5 ★</span>
+                            <div class="star-bar-track">
+                                <div class="star-bar-fill" style="width: 88%;"></div>
+                            </div>
+                            <span class="star-bar-percent">88%</span>
+                        </div>
+                        <div class="star-bar-row">
+                            <span class="star-bar-label">4 ★</span>
+                            <div class="star-bar-track">
+                                <div class="star-bar-fill" style="width: 9%;"></div>
+                            </div>
+                            <span class="star-bar-percent">9%</span>
+                        </div>
+                        <div class="star-bar-row">
+                            <span class="star-bar-label">3 ★</span>
+                            <div class="star-bar-track">
+                                <div class="star-bar-fill" style="width: 2%;"></div>
+                            </div>
+                            <span class="star-bar-percent">2%</span>
+                        </div>
+                        <div class="star-bar-row">
+                            <span class="star-bar-label">2 ★</span>
+                            <div class="star-bar-track">
+                                <div class="star-bar-fill" style="width: 1%;"></div>
+                            </div>
+                            <span class="star-bar-percent">1%</span>
+                        </div>
+                        <div class="star-bar-row">
+                            <span class="star-bar-label">1 ★</span>
+                            <div class="star-bar-track">
+                                <div class="star-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <span class="star-bar-percent">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trust Metrics -->
+                <div class="opinion-trust-pills">
+                    <div class="trust-pill">
+                        <div class="trust-pill-val">99%</div>
+                        <div class="trust-pill-label">Food Quality</div>
+                    </div>
+                    <div class="trust-pill">
+                        <div class="trust-pill-val">98%</div>
+                        <div class="trust-pill-label">Delivery Speed</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Rate the Restaurant Form -->
+            <div class="opinion-form-card">
+                <h3>⭐ Rate the Restaurant</h3>
+                <p class="form-desc">Select 1 to 5 stars. Description is completely optional — send it directly to our team with one tap!</p>
+
+                <form id="opinionForm" onsubmit="handleOpinionSubmit(event)">
+                    <!-- 1 - 5 STARS SELECTOR -->
+                    <div class="star-rating-box">
+                        <label for="interactiveStars">Select Your Rating (1 - 5 Stars):</label>
+                        <div class="interactive-stars" id="interactiveStars" role="radiogroup" aria-label="1 to 5 stars rating">
+                            <button type="button" class="star-picker-btn active" data-rating="1" aria-label="1 star" onclick="setRating(1)">★</button>
+                            <button type="button" class="star-picker-btn active" data-rating="2" aria-label="2 stars" onclick="setRating(2)">★</button>
+                            <button type="button" class="star-picker-btn active" data-rating="3" aria-label="3 stars" onclick="setRating(3)">★</button>
+                            <button type="button" class="star-picker-btn active" data-rating="4" aria-label="4 stars" onclick="setRating(4)">★</button>
+                            <button type="button" class="star-picker-btn active" data-rating="5" aria-label="5 stars" onclick="setRating(5)">★</button>
+                        </div>
+                        <div>
+                            <span class="rating-sentiment-badge" id="ratingSentiment">🦖 5 Stars - Beast Mode Legendary!</span>
+                        </div>
+                    </div>
+
+                    <!-- OTHER DETAILS -->
+                    <div class="opinion-form-grid">
+                        <div class="opinion-form-row">
+                            <label>Your Name <span class="optional-tag">(Optional)</span>
+                                <input type="text" id="reviewerName" placeholder="e.g. Captain Basem">
+                            </label>
+                            <label>Order Type <span class="optional-tag">(Optional)</span>
+                                <select id="orderType">
+                                    <option value="Delivery Order">🛵 Delivery Order</option>
+                                    <option value="Takeaway Pickup">🥡 Takeaway Pickup</option>
+                                    <option value="Dine-in Hub">🍽️ Dine-in Hub</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <label>Favorite Dish Ordered <span class="optional-tag">(Optional)</span>
+                            <select id="dishOrdered">
+                                <option value="General Restaurant Experience">General Experience (All Dishes)</option>
+                                <option value="Grilled Chicken Salad">🥗 Grilled Chicken Salad</option>
+                                <option value="Baked Salmon Bowl">🍣 Baked Salmon Bowl</option>
+                                <option value="Steak Burrito Bowl">🥩 Steak Burrito Bowl</option>
+                                <option value="Tofu Stir Fry">🥢 Tofu Stir Fry</option>
+                                <option value="Beshamel Pasta">🍝 Beshamel Pasta</option>
+                                <option value="Spongebob Burger">🍔 Spongebob Burger</option>
+                                <option value="Pizza">🍕 Pizza</option>
+                                <option value="Fried Chicken">🍗 Fried Chicken</option>
+                                <option value="Mac and Cheese">🧀 Mac and Cheese</option>
+                            </select>
+                        </label>
+
+                        <!-- DESCRIPTION (NOT REQUIRED) -->
+                        <label>Description / Feedback <span class="optional-tag" style="color: #ffae00; font-weight: 700;">(Not Required - Optional)</span>
+                            <textarea id="opinionDescription" rows="3" placeholder="Tell us about the flavor, portion size, packaging or delivery speed... (You can leave this blank!)"></textarea>
+                        </label>
+
+                        <!-- ACTIONS -->
+                        <div class="opinion-form-actions">
+                            <button type="submit" class="btn-send-opinion">
+                                <span>🦖</span> Send Opinion to Restaurant
+                            </button>
+                            <button type="button" class="btn-opinion-whatsapp" onclick="sendViaWhatsApp()">
+                                <span>💬</span> Send via WhatsApp
+                            </button>
+                        </div>
+
+                        <div class="opinion-submit-alert" id="opinionSuccessAlert">
+                            🎉 <strong>Thank you!</strong> Your rating & opinion has been sent directly to the FoodZILLA restaurant management team!
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             LIVE OPINIONS FEED SECTION
+             ==================================================== -->
+        <section class="opinions-feed-container">
+            <div class="opinions-feed-toolbar">
+                <div>
+                    <h3 style="color: #fff; font-size: 1.45rem; margin-bottom: 4px;">💬 What Customers Are Saying</h3>
+                    <p style="color: #c9b9b0; font-size: 0.9rem;">Real ratings and reviews from foodZILLA foodies across Egypt</p>
+                </div>
+
+                <!-- Star Filter Pills -->
+                <div class="opinions-filter-group" id="opinionFilterBar">
+                    <button class="opinion-filter-pill active" data-filter="all" onclick="filterOpinions('all')">All Reviews</button>
+                    <button class="opinion-filter-pill" data-filter="5" onclick="filterOpinions(5)">5 Stars ★</button>
+                    <button class="opinion-filter-pill" data-filter="4" onclick="filterOpinions(4)">4 Stars ★</button>
+                    <button class="opinion-filter-pill" data-filter="3" onclick="filterOpinions(3)">3 Stars ★</button>
+                </div>
+            </div>
+
+            <!-- Opinions Cards Grid -->
+            <div class="opinions-cards-list" id="opinionsCardsList">
+                <!-- Dynamically rendered -->
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>🦖 <strong>foodZILLA</strong> — The Beast of Healthy Recipes & Fast Delivery.</p>
+            <p style="margin-top: 6px;">Hotline: <a href="tel:19844">19844</a> | Built for the Afro-Asian Youth Forum 2026 - Aswan.</p>
+        </footer>
+    </div>
+
+    <!-- ========================================================
+         SIGN IN MODAL
+         ======================================================== -->
+    <div class="account-overlay" id="accountOverlay" aria-hidden="true">
+        <section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+            <button class="account-close-btn" type="button" aria-label="Close" onclick="hideSignIn()">×</button>
+            <p class="account-kicker">FOODZILLA ACCOUNT</p>
+            <h2 id="accountTitle">Sign in</h2>
+            <p class="account-intro">Add your details for delivery.</p>
+            <form id="signInForm" class="account-form">
+                <label>Name
+                    <input name="name" type="text" autocomplete="name" required>
+                </label>
+                <label>Governorate
+                    <input name="governorate" type="text" autocomplete="address-level1" required>
+                </label>
+                <label>City
+                    <input name="city" type="text" autocomplete="address-level2" required>
+                </label>
+                <label>Address
+                    <input name="address" type="text" autocomplete="street-address" required>
+                </label>
+                <label>Phone number
+                    <input name="phone" type="tel" autocomplete="tel" required maxlength="11" pattern="[0-9]{10,15}">
+                </label>
+                <label>Password
+                    <span class="password-control">
+                        <input id="signInPassword" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="16" required>
+                        <button class="password-toggle" id="togglePassword" type="button" aria-label="Show password" aria-pressed="false" title="Show password">
+                            <svg class="eye-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-off-icon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.8 15.8 0 0 1-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10.7 10.7 0 0 0 4-.8"/></svg>
+                        </button>
+                    </span>
+                    <span class="field-hint">At least 8 characters and maximum 16 characters</span>
+                </label>
+                <p class="account-message" id="accountMessage" role="status"></p>
+                <button class="account-submit-btn" type="submit">Save details</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- ========================================================
+         CART DRAWER & OVERLAY
+         ======================================================== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart(false)"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 My Cart</h3>
+            <button class="cart-close-btn" onclick="toggleCart(false)">×</button>
+        </div>
+
+        <section class="cart-delivery" id="cartDelivery" aria-label="Delivery details"></section>
+
+        <div class="cart-items" id="cartItemsList"></div>
+
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotalPrice">0 EGP</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Delivery Fee:</span>
+                    <span id="cartDeliveryFee">0 EGP</span>
+                </div>
+                <div class="cart-total-row">
+                    <span>Total:</span>
+                    <span id="cartTotalPrice">0 EGP</span>
+                </div>
+            </div>
+            <div class="cart-footer-buttons">
+                <button class="btn-checkout" onclick="checkoutCart()">Buy Now</button>
+                <button class="btn-clear" onclick="clearCart()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/project.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        /* ==========================================================
+           CUSTOMER OPINIONS ENGINE
+           ========================================================== */
+
+        let currentSelectedRating = 5;
+        let activeFilter = 'all';
+
+        const sentimentLabels = {
+            1: "😡 1 Star - Terrible / Needs Serious Improvement",
+            2: "😐 2 Stars - Fair / Average Experience",
+            3: "🙂 3 Stars - Good & Satisfying Meal",
+            4: "😋 4 Stars - Great Quality & Fast Delivery!",
+            5: "🦖 5 Stars - Beast Mode Legendary!"
+        };
+
+        // 1. Star Rating Interactive Controller
+        function setRating(score) {
+            currentSelectedRating = score;
+            const stars = document.querySelectorAll('.star-picker-btn');
+            stars.forEach((star, index) => {
+                if (index < score) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+            document.getElementById('ratingSentiment').textContent = sentimentLabels[score] || (score + ' Stars');
+        }
+
+        // Add hover effects to stars
+        const starButtons = document.querySelectorAll('.star-picker-btn');
+        starButtons.forEach((star, idx) => {
+            star.addEventListener('mouseenter', () => {
+                starButtons.forEach((s, i) => {
+                    if (i <= idx) s.classList.add('hovered');
+                    else s.classList.remove('hovered');
+                });
+            });
+            star.addEventListener('mouseleave', () => {
+                starButtons.forEach(s => s.classList.remove('hovered'));
+            });
+        });
+
+        // 2. Pre-populated Seed Reviews + LocalStorage Persistence
+        const defaultReviews = [
+            {
+                id: 1,
+                name: "Omar El-Sayed",
+                stars: 5,
+                type: "Delivery Order",
+                dish: "Grilled Chicken Salad",
+                date: "Yesterday",
+                description: "The chicken was seasoned to perfection, warm and tender, while the greens stayed fresh and cold. Delivery took only 28 minutes to Mohandessin! Definitely ordering again.",
+                helpfulCount: 24,
+                verified: true
+            },
+            {
+                id: 2,
+                name: "Yasmine Nour",
+                stars: 5,
+                type: "Delivery Order",
+                dish: "Baked Salmon Bowl",
+                date: "2 days ago",
+                description: "The best healthy meal in Cairo hands down. Quinoa and avocado were top-tier freshness, and the thermal packaging kept it completely sealed.",
+                helpfulCount: 19,
+                verified: true
+            },
+            {
+                id: 3,
+                name: "Karim Mostafa",
+                stars: 4,
+                type: "Takeaway Pickup",
+                dish: "Spongebob Burger",
+                date: "3 days ago",
+                description: "Super juicy burger with clean healthy ingredients! Packed with protein and didn't feel heavy at all. Great staff at the branch.",
+                helpfulCount: 14,
+                verified: true
+            },
+            {
+                id: 4,
+                name: "Salma Tarek",
+                stars: 5,
+                type: "Delivery Order",
+                dish: "Greek Yogurt Parfait",
+                date: "5 days ago",
+                description: "Sweet, crunchy granola with fresh berries. It satisfies my sweet tooth while maintaining my fitness calories goals!",
+                helpfulCount: 11,
+                verified: true
+            },
+            {
+                id: 5,
+                name: "Ahmed Hesham",
+                stars: 5,
+                type: "Delivery Order",
+                dish: "Steak Burrito Bowl",
+                date: "1 week ago",
+                description: "Massive portion! The sirloin cubes were seared beautifully and the black beans + salsa combo was on point. Hotline answered on the first ring.",
+                helpfulCount: 32,
+                verified: true
+            },
+            {
+                id: 6,
+                name: "Mona Adel",
+                stars: 4,
+                type: "Dine-in Hub",
+                dish: "Beshamel Pasta",
+                date: "1 week ago",
+                description: "Authentic Egyptian beshamel pasta made with lighter, healthy ingredients. Loved the cheese crust on top!",
+                helpfulCount: 8,
+                verified: true
+            }
+        ];
+
+        function loadReviews() {
+            try {
+                const stored = localStorage.getItem('foodzilla_customer_opinions');
+                if (stored) {
+                    return JSON.parse(stored);
+                }
+            } catch (e) {
+                console.error(e);
+            }
+            return defaultReviews;
+        }
+
+        let allReviews = loadReviews();
+
+        // 3. Render Reviews Feed
+        function renderOpinionsFeed() {
+            const container = document.getElementById('opinionsCardsList');
+            if (!container) return;
+
+            let filtered = allReviews;
+            if (activeFilter !== 'all') {
+                filtered = allReviews.filter(r => r.stars === parseInt(activeFilter));
+            }
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 40px 20px; color: #a39085;">
+                        <div style="font-size: 2.5rem; margin-bottom: 8px;">🦖</div>
+                        <h4 style="color: #ffae00; font-size: 1.2rem;">No reviews found for this star rating yet.</h4>
+                        <p>Be the first to rate FoodZILLA with ${activeFilter} stars!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(rev => {
+                const initial = (rev.name || 'G').charAt(0).toUpperCase();
+                const starsString = '★'.repeat(rev.stars) + '☆'.repeat(5 - rev.stars);
+                const hasDesc = rev.description && rev.description.trim().length > 0;
+                
+                return `
+                    <div class="opinion-item-card">
+                        <div>
+                            <div class="opinion-card-header">
+                                <div class="opinion-avatar">${initial}</div>
+                                <div class="opinion-user-meta">
+                                    <div class="opinion-user-name">
+                                        <span>${escapeHTML(rev.name || 'Anonymous Customer')}</span>
+                                        ${rev.verified ? '<span class="verified-badge">✓ Verified Order</span>' : ''}
+                                    </div>
+                                    <div class="opinion-date-meta">${escapeHTML(rev.type || 'Order')} • ${escapeHTML(rev.date || 'Recently')}</div>
+                                </div>
+                            </div>
+
+                            <div class="opinion-stars-row">
+                                <span>${starsString}</span>
+                                ${rev.dish ? `<span class="opinion-dish-tag">🍽️ ${escapeHTML(rev.dish)}</span>` : ''}
+                            </div>
+
+                            ${hasDesc 
+                                ? `<p class="opinion-desc-text">"${escapeHTML(rev.description)}"</p>`
+                                : `<p class="opinion-desc-empty">Rating only submitted (no description provided).</p>`
+                            }
+                        </div>
+
+                        <div class="opinion-card-footer">
+                            <span style="color: #ffcc91; font-size: 0.82rem; font-weight: 700;">${rev.stars} / 5 Stars</span>
+                            <button class="btn-helpful" onclick="voteHelpful(${rev.id}, this)">
+                                <span>👍</span> Helpful (<span class="helpful-num">${rev.helpfulCount || 0}</span>)
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // 4. Submit Opinion Handler
+        function handleOpinionSubmit(event) {
+            event.preventDefault();
+
+            const nameInput = document.getElementById('reviewerName').value.trim();
+            const orderType = document.getElementById('orderType').value;
+            const dish = document.getElementById('dishOrdered').value;
+            const description = document.getElementById('opinionDescription').value.trim();
+
+            const newReview = {
+                id: Date.now(),
+                name: nameInput || (customerProfile ? customerProfile.name : "Happy Customer"),
+                stars: currentSelectedRating,
+                type: orderType,
+                dish: dish === "General Restaurant Experience" ? "" : dish,
+                date: "Just now",
+                description: description, // Can be empty / not required!
+                helpfulCount: 0,
+                verified: true
+            };
+
+            // Prepend new review
+            allReviews.unshift(newReview);
+            try {
+                localStorage.setItem('foodzilla_customer_opinions', JSON.stringify(allReviews));
+            } catch (e) {
+                console.error(e);
+            }
+
+            // Show alert
+            const alertBox = document.getElementById('opinionSuccessAlert');
+            alertBox.style.display = 'block';
+
+            // Reset description input
+            document.getElementById('opinionDescription').value = '';
+
+            // Update feed immediately
+            renderOpinionsFeed();
+
+            // Scroll to the review smoothly
+            setTimeout(() => {
+                alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+
+            setTimeout(() => {
+                alertBox.style.display = 'none';
+            }, 6000);
+        }
+
+        // 5. Send via WhatsApp directly to Restaurant Manager
+        function sendViaWhatsApp() {
+            const name = document.getElementById('reviewerName').value.trim() || (customerProfile ? customerProfile.name : 'Customer');
+            const stars = currentSelectedRating;
+            const dish = document.getElementById('dishOrdered').value;
+            const description = document.getElementById('opinionDescription').value.trim();
+
+            let message = `Hello FoodZILLA Restaurant!%0A⭐ Customer Rating: ${stars} / 5 Stars%0A👤 Name: ${encodeURIComponent(name)}%0A🍽️ Dish: ${encodeURIComponent(dish)}`;
+            if (description) {
+                message += `%0A📝 Opinion: ${encodeURIComponent(description)}`;
+            }
+
+            const waUrl = `https://wa.me/201012345678?text=${message}`;
+            window.open(waUrl, '_blank');
+        }
+
+        // 6. Helpful Upvote Button
+        function voteHelpful(id, buttonEl) {
+            if (buttonEl.classList.contains('voted')) return;
+            const rev = allReviews.find(r => r.id === id);
+            if (rev) {
+                rev.helpfulCount = (rev.helpfulCount || 0) + 1;
+                buttonEl.classList.add('voted');
+                const numSpan = buttonEl.querySelector('.helpful-num');
+                if (numSpan) numSpan.textContent = rev.helpfulCount;
+                try {
+                    localStorage.setItem('foodzilla_customer_opinions', JSON.stringify(allReviews));
+                } catch (e) {}
+            }
+        }
+
+        // 7. Filter Tabs (All, 5, 4, 3 stars)
+        function filterOpinions(filter) {
+            activeFilter = filter;
+            document.querySelectorAll('.opinion-filter-pill').forEach(btn => {
+                if (btn.getAttribute('data-filter') == filter) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            renderOpinionsFeed();
+        }
+
+        // Prefill name if signed in
+        if (customerProfile && customerProfile.name) {
+            const nameEl = document.getElementById('reviewerName');
+            if (nameEl && !nameEl.value) {
+                nameEl.value = customerProfile.name;
+            }
+        }
+
+        // Init feed on page load
+        renderOpinionsFeed();
+    </script>
+</body>
+
+</html>

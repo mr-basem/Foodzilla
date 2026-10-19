@@ -8,6 +8,7 @@ let searchText = '';
 // 1. Display recipes on the page
 function displayRecipes(category) {
     const grid = document.getElementById('recipesGrid');
+    if (!grid) return;
     grid.innerHTML = '';
 
     let recipesToShow = [];
@@ -121,25 +122,34 @@ function closeModal() {
 }
 
 // 4. Category Filter Buttons
-document.getElementById('categories').addEventListener('click', (e) => {
-    if (e.target.classList.contains('category-btn')) {
-        document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
-        e.target.classList.add('active');
-        currentCategory = e.target.getAttribute('data-category');
-        displayRecipes(currentCategory);
-    }
-});
+const categoriesElement = document.getElementById('categories');
+if (categoriesElement) {
+    categoriesElement.addEventListener('click', (e) => {
+        if (e.target.classList.contains('category-btn')) {
+            document.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            e.target.classList.add('active');
+            currentCategory = e.target.getAttribute('data-category');
+            displayRecipes(currentCategory);
+        }
+    });
+}
 
 // 5. Search Bar Input
-document.getElementById('searchBar').addEventListener('input', (e) => {
-    searchText = e.target.value.toLowerCase().trim();
-    displayRecipes(currentCategory);
-});
+const searchBarElement = document.getElementById('searchBar');
+if (searchBarElement) {
+    searchBarElement.addEventListener('input', (e) => {
+        searchText = e.target.value.toLowerCase().trim();
+        displayRecipes(currentCategory);
+    });
+}
 
 // 6. Close Modal when clicking background
-document.getElementById('recipeModal').addEventListener('click', (e) => {
-    if (e.target.id === 'recipeModal') closeModal();
-});
+const recipeModalElement = document.getElementById('recipeModal');
+if (recipeModalElement) {
+    recipeModalElement.addEventListener('click', (e) => {
+        if (e.target.id === 'recipeModal') closeModal();
+    });
+}
 
 
 /* ==========================================================
@@ -173,7 +183,9 @@ function escapeHTML(value) {
 
 function updateAccountButton() {
     const accountButton = document.getElementById('accountButton');
-    accountButton.textContent = customerProfile ? customerProfile.name : 'Sign in';
+    if (accountButton) {
+        accountButton.textContent = customerProfile ? customerProfile.name : 'Sign in';
+    }
 }
 
 function showSignIn() {
@@ -199,49 +211,63 @@ function hideSignIn() {
     overlay.setAttribute('aria-hidden', 'true');
 }
 
-document.getElementById('signInForm').addEventListener('submit', event => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-    const password = String(formData.get('password') || '');
+const signInFormEl = document.getElementById('signInForm');
+if (signInFormEl) {
+    signInFormEl.addEventListener('submit', event => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        const formData = new FormData(form);
+        const password = String(formData.get('password') || '');
 
-    if (password.length < 8) {
-        document.getElementById('accountMessage').textContent = 'Password must be at least 8 characters.';
-        return;
-    }
+        if (password.length < 8) {
+            const msgEl = document.getElementById('accountMessage');
+            if (msgEl) msgEl.textContent = 'Password must be at least 8 characters.';
+            return;
+        }
 
-    customerProfile = {
-        name: String(formData.get('name')).trim(),
-        governorate: String(formData.get('governorate')).trim(),
-        city: String(formData.get('city')).trim(),
-        address: String(formData.get('address')).trim(),
-        phone: String(formData.get('phone')).trim()
-    };
-    localStorage.setItem('foodzillaCustomer', JSON.stringify(customerProfile));
-    updateAccountButton();
-    renderCart();
-    hideSignIn();
-});
+        customerProfile = {
+            name: String(formData.get('name')).trim(),
+            governorate: String(formData.get('governorate')).trim(),
+            city: String(formData.get('city')).trim(),
+            address: String(formData.get('address')).trim(),
+            phone: String(formData.get('phone')).trim()
+        };
+        localStorage.setItem('foodzillaCustomer', JSON.stringify(customerProfile));
+        updateAccountButton();
+        renderCart();
+        hideSignIn();
+    });
+}
 
-document.getElementById('togglePassword').addEventListener('click', event => {
-    const button = event.currentTarget;
-    const passwordInput = document.getElementById('signInPassword');
-    const shouldShow = passwordInput.type === 'password';
+const togglePasswordBtn = document.getElementById('togglePassword');
+if (togglePasswordBtn) {
+    togglePasswordBtn.addEventListener('click', event => {
+        const button = event.currentTarget;
+        const passwordInput = document.getElementById('signInPassword');
+        if (!passwordInput) return;
+        const shouldShow = passwordInput.type === 'password';
 
-    passwordInput.type = shouldShow ? 'text' : 'password';
-    button.setAttribute('aria-pressed', String(shouldShow));
-    button.setAttribute('aria-label', shouldShow ? 'Hide password' : 'Show password');
-    button.title = shouldShow ? 'Hide password' : 'Show password';
-    button.querySelector('.eye-icon').hidden = shouldShow;
-    button.querySelector('.eye-off-icon').hidden = !shouldShow;
-});
+        passwordInput.type = shouldShow ? 'text' : 'password';
+        button.setAttribute('aria-pressed', String(shouldShow));
+        button.setAttribute('aria-label', shouldShow ? 'Hide password' : 'Show password');
+        button.title = shouldShow ? 'Hide password' : 'Show password';
+        const eyeIcon = button.querySelector('.eye-icon');
+        const eyeOffIcon = button.querySelector('.eye-off-icon');
+        if (eyeIcon) eyeIcon.hidden = shouldShow;
+        if (eyeOffIcon) eyeOffIcon.hidden = !shouldShow;
+    });
+}
 
-document.getElementById('accountOverlay').addEventListener('click', event => {
-    if (event.target.id === 'accountOverlay') hideSignIn();
-});
+const accountOverlayEl = document.getElementById('accountOverlay');
+if (accountOverlayEl) {
+    accountOverlayEl.addEventListener('click', event => {
+        if (event.target.id === 'accountOverlay') hideSignIn();
+    });
+}
 
 function renderDeliveryDetails() {
     const delivery = document.getElementById('cartDelivery');
+    if (!delivery) return;
 
     if (!customerProfile) {
         delivery.innerHTML = `
@@ -316,6 +342,14 @@ function renderCart() {
 
     let totalCount = 0;
     let subtotalPrice = 0;
+
+    cart.forEach(item => {
+        totalCount += item.qty;
+        subtotalPrice += item.price * item.qty;
+    });
+
+    if (cartCount) cartCount.textContent = totalCount;
+    if (!cartItemsList) return;
 
     if (cart.length === 0) {
         cartItemsList.innerHTML = '<p style="text-align:center; padding:20px; color:#aaa;">Cart is empty</p>';
@@ -423,9 +457,8 @@ function toggleCart(open) {
 }
 
 
-/* ==========================================================
-   START APP (RUNS ON LOAD)
-   ========================================================== */
-displayRecipes('all');
+if (document.getElementById('recipesGrid')) {
+    displayRecipes('all');
+}
 updateAccountButton();
 renderCart();

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use foodZILLA - Step-by-Step Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ========================================================
+         TOP NAVIGATION BAR
+         ======================================================== -->
+    <nav class="top-nav">
+        <div class="top-logo"><a href="index.html" class="logo-link">🦖 food<span>ZILLA</span></a></div>
+        <div class="top-nav-links">
+            <a href="index.html" class="nav-link">🏠 Home</a>
+            <a href="index.html#categories" class="nav-link">🥗 Menu</a>
+            <a href="contact.html" class="nav-link">📞 Contact & Delivery</a>
+            <a href="opinion.html" class="nav-link">⭐ Opinions</a>
+            <a href="how-to-use.html" class="nav-link active">📖 How to Use</a>
+        </div>
+        <div class="top-nav-actions">
+            <a href="tel:19844" class="nav-hotline-pill" title="Call Hotline 19844">📞 19844</a>
+            <button class="account-btn" id="accountButton" onclick="showSignIn()">Sign in</button>
+            <button class="top-cart-btn" onclick="toggleCart()">
+                🛒 Cart <span class="cart-badge" id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========================================================
+         MAIN CONTAINER
+         ======================================================== -->
+    <div class="container">
+        <!-- GODZILLA HEADER SCENE -->
+        <header>
+            <div class="lightning-flash"></div>
+            <svg class="godzilla-monster" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 5 100 
+             C 5 95, 2 92, 4 88 
+             C 2 85, 3 80, 7 76 
+             C 5 73, 6 68, 11 65 
+             C 9 60, 13 55, 18 52 
+             C 16 48, 20 44, 25 41 
+             C 23 35, 29 30, 36 28 
+             C 38 22, 45 18, 54 16 
+             C 56 12, 64 8, 72 6 
+             C 74 2, 79 0, 84 2 
+             C 86 5, 84 10, 81 14 
+             C 85 15, 88 18, 86 22 
+             C 90 24, 92 28, 89 32 
+             C 93 36, 91 42, 86 46 
+             C 84 50, 80 54, 83 60 
+             C 79 66, 75 72, 78 78 
+             C 73 84, 70 92, 74 100 
+             Z" fill="#05070a" />
+                <path d="M 12 70 L 6 66 L 15 62 L 10 55 L 20 52 L 15 44 L 26 42 L 21 34 L 32 32 L 28 22 L 40 22 L 36 12 L 48 15 L 45 5 L 56 10 L 54 2 L 64 6 L 68 0 L 73 8 L 78 2 L 81 10" fill="#05070a" />
+                <path d="M 81 14 L 92 8 L 95 18 L 88 20 C 85 18, 83 16, 81 14 Z M 83 24 L 94 28 L 91 35 C 87 33, 85 30, 83 24 Z" fill="#05070a" />
+            </svg>
+            <div class="atomic-fire-beam"></div>
+
+            <div class="header-content">
+                <h1>How to Use foodZILLA</h1>
+                <p>Simple step-by-step instructions on signing up, placing orders, exploring recipes, and tracking deliveries</p>
+            </div>
+
+            <div class="skyline-buildings"></div>
+        </header>
+
+        <!-- ====================================================
+             QUICK JUMP NAVIGATION
+             ==================================================== -->
+        <nav class="guide-quick-nav" aria-label="Guide Sections">
+            <a href="#signup-guide" class="guide-nav-pill">👤 How to Sign Up</a>
+            <a href="#order-guide" class="guide-nav-pill">🛒 How to Order</a>
+            <a href="#recipes-guide" class="guide-nav-pill">🔍 Finding Recipes</a>
+            <a href="#delivery-guide" class="guide-nav-pill">🛵 Delivery & Pricing</a>
+            <a href="#opinions-guide" class="guide-nav-pill">⭐ Leaving an Opinion</a>
+        </nav>
+
+        <!-- ====================================================
+             SECTION 1: HOW TO SIGN UP
+             ==================================================== -->
+        <section id="signup-guide" class="guide-container-card">
+            <div class="guide-header-strip">
+                <div>
+                    <span class="section-kicker">Account Setup</span>
+                    <h2 class="section-title">👤 How to Sign Up / Save Delivery Details</h2>
+                    <p class="section-subtitle">Set up your delivery profile once for rapid 1-click ordering across all foodZILLA pages.</p>
+                </div>
+                <span class="guide-badge-pill">4 Simple Steps</span>
+            </div>
+
+            <div class="timeline-steps">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number-bubble">01</div>
+                    <div class="step-content">
+                        <h4>Click the "Sign in" Button</h4>
+                        <p>Locate the <strong>Sign in</strong> button in the top navigation bar at the upper-right corner of the screen.</p>
+                        <div class="step-preview-box">
+                            <span class="step-mock-tag">Top Nav Bar</span>
+                            <span class="step-mock-text">🦖 foodZILLA ➔ [Sign in] ➔ 🛒 Cart</span>
+                        </div>
+                        <button type="button" class="step-interactive-btn" onclick="showSignIn()">
+                            <span>👤</span> Try Clicking "Sign In" Right Now
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number-bubble">02</div>
+                    <div class="step-content">
+                        <h4>Fill in Your Delivery Information</h4>
+                        <p>A popup modal will appear asking for your essential delivery credentials:</p>
+                        <ul style="color: #d8c8c0; margin: 0 0 10px 20px; line-height: 1.6;">
+                            <li><strong>Name:</strong> Your first and last name (e.g. <em>Basem Ahmed</em>).</li>
+                            <li><strong>Governorate:</strong> Your governorate in Egypt (e.g. <em>Giza</em> or <em>Cairo</em>).</li>
+                            <li><strong>City:</strong> Your district or municipality (e.g. <em>Mohandessin</em>, <em>Dokki</em>, <em>Nasr City</em>).</li>
+                            <li><strong>Address:</strong> Your exact street name, building number, and apartment.</li>
+                            <li><strong>Phone Number:</strong> A valid mobile number (10 to 15 digits) so the delivery driver can reach you.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number-bubble">03</div>
+                    <div class="step-content">
+                        <h4>Create Your Password (8 – 16 Characters)</h4>
+                        <p>Enter a secure password between <strong>8 and 16 characters</strong>. You can click the <span style="color:#ffae00;">👁️ Eye Icon</span> on the right side of the password box anytime to reveal or hide what you typed.</p>
+                        <div class="guide-tip-box">
+                            <span>💡</span>
+                            <div><strong>Password Rule:</strong> Passwords shorter than 8 characters will show a friendly warning. Keep it between 8 and 16 characters.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="step-number-bubble">04</div>
+                    <div class="step-content">
+                        <h4>Click "Save details" & You're Done!</h4>
+                        <p>Click the orange <strong>Save details</strong> button. Your details are now saved in your browser's local memory. The top navigation button will instantly transform from <em>"Sign in"</em> to <strong>your personal name</strong>!</p>
+                        <div class="guide-tip-box">
+                            <span>⚡</span>
+                            <div><strong>Instant Address Sync:</strong> Your saved address automatically populates into your shopping cart drawer whenever you place an order. You can edit it anytime by clicking <em>"Edit"</em> inside the cart.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SECTION 2: HOW TO ORDER
+             ==================================================== -->
+        <section id="order-guide" class="guide-container-card">
+            <div class="guide-header-strip">
+                <div>
+                    <span class="section-kicker">Placing Orders</span>
+                    <h2 class="section-title">🛒 How to Order (2 Easy Ways)</h2>
+                    <p class="section-subtitle">Order directly through the online smart cart, or speak to a live operator via our nationwide 24/7 hotline.</p>
+                </div>
+                <span class="guide-badge-pill">Online Cart or Hotline</span>
+            </div>
+
+            <!-- 2-Column Comparison -->
+            <div class="ways-to-order-grid">
+                <!-- Method A: Online Cart -->
+                <div class="order-method-card">
+                    <div>
+                        <h4><span>💻</span> Method A: Online Shopping Cart</h4>
+                        <p style="color: #ffd8bf; font-size: 0.9rem; margin-bottom: 15px;">Fastest for customized orders & digital checkout:</p>
+                        <ul class="order-method-steps">
+                            <li><strong>Browse Recipes:</strong> Scroll through the recipes grid on the Home page or the Express Menu on the Contact page.</li>
+                            <li><strong>Click "Add to Cart":</strong> Each meal has an orange button. You'll see a confirmation alert and the cart counter will increment.</li>
+                            <li><strong>Open Cart Drawer:</strong> Click the <strong>🛒 Cart</strong> button in the top navigation bar to slide open your order summary.</li>
+                            <li><strong>Adjust Quantities:</strong> Use the <strong>+</strong> and <strong>-</strong> buttons to change portions, or click <strong>×</strong> to remove an item.</li>
+                            <li><strong>Click "Buy Now":</strong> If signed in, your order is placed immediately! If not, the sign-in modal opens for quick address entry.</li>
+                        </ul>
+                    </div>
+                    <button type="button" class="step-interactive-btn" onclick="toggleCart(true)">
+                        <span>🛒</span> Open Your Cart Drawer
+                    </button>
+                </div>
+
+                <!-- Method B: Hotline & WhatsApp -->
+                <div class="order-method-card">
+                    <div>
+                        <h4><span>📞</span> Method B: 24/7 Hotline & WhatsApp</h4>
+                        <p style="color: #ffd8bf; font-size: 0.9rem; margin-bottom: 15px;">Ideal for instant orders over the phone or text:</p>
+                        <ul class="order-method-steps">
+                            <li><strong>Call Hotline 19844:</strong> Click the glowing red pill in the header or dial <strong>19844</strong> on your phone keypad.</li>
+                            <li><strong>Average Pickup &lt; 30s:</strong> An operator will take your order and assign it to the nearest central kitchen.</li>
+                            <li><strong>WhatsApp Ordering:</strong> Go to the <a href="contact.html" style="color: #ffae00; text-decoration: underline;">Contact Page</a> and tap <strong>"💬 WhatsApp Order"</strong> to send your meal choice directly to our team.</li>
+                            <li><strong>Cash or Card at Doorstep:</strong> Pay by cash, mobile POS card reader, or InstaPay upon delivery.</li>
+                        </ul>
+                    </div>
+                    <a href="tel:19844" class="step-interactive-btn" style="background: linear-gradient(135deg, #cc1100, #ff4500);">
+                        <span>📞</span> Dial Hotline 19844
+                    </a>
+                </div>
+            </div>
+
+            <div class="timeline-steps">
+                <div class="step-card">
+                    <div class="step-number-bubble">⚡</div>
+                    <div class="step-content">
+                        <h4>Pro-Tip: "Buy Now" Instant Order Button</h4>
+                        <p>Want a single meal right away? On any recipe modal or card, click the orange <strong>"Buy Now"</strong> button. This automatically adds the dish and opens your cart drawer in a single click, ready for immediate checkout!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SECTION 3: HOW TO EXPLORE RECIPES & WATCH VIDEOS
+             ==================================================== -->
+        <section id="recipes-guide" class="guide-container-card">
+            <div class="guide-header-strip">
+                <div>
+                    <span class="section-kicker">Culinary Exploration</span>
+                    <h2 class="section-title">🔍 How to Find Recipes & Cooking Videos</h2>
+                    <p class="section-subtitle">FoodZILLA is more than just a restaurant — it's a full healthy recipe encyclopedia with nutritional data.</p>
+                </div>
+                <span class="guide-badge-pill">Search & Filters</span>
+            </div>
+
+            <div class="timeline-steps">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number-bubble">01</div>
+                    <div class="step-content">
+                        <h4>Filter by Nutrition Category</h4>
+                        <p>Use the category filter buttons on the Home page to explore meals tailored to your dietary goals:</p>
+                        <div class="step-preview-box">
+                            <span class="step-mock-tag">Categories</span>
+                            <span class="step-mock-text">🍗 Protein • 🥖 Carbohydrates • 🍰 Sweets • 🍎 Fruits • 🧀 Dairy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number-bubble">02</div>
+                    <div class="step-content">
+                        <h4>Instant Dual-Search (Recipe Name or Ingredients)</h4>
+                        <p>Type into the search bar at the top of the recipes grid. Our instant search engine checks both the <strong>name of the dish</strong> and <strong>any ingredient</strong> simultaneously! For example, typing <em>"avocado"</em> or <em>"salmon"</em> will instantly filter matching recipes in real time.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number-bubble">03</div>
+                    <div class="step-content">
+                        <h4>Open the Recipe Modal & Watch YouTube Video</h4>
+                        <p>Click anywhere on a recipe card to launch the comprehensive recipe modal. Here you can discover:</p>
+                        <ul style="color: #d8c8c0; margin: 0 0 10px 20px; line-height: 1.6;">
+                            <li><strong>Exact Calorie Count:</strong> Total kilocalories (kcal) per serving.</li>
+                            <li><strong>Complete Ingredients:</strong> Bulleted list of fresh healthy items.</li>
+                            <li><strong>Cooking Steps:</strong> Step-by-step instructions to recreate the dish at home.</li>
+                            <li><strong>YouTube Video:</strong> Embedded video tutorial with full controls.</li>
+                        </ul>
+                        <a href="index.html" class="step-interactive-btn">
+                            <span>🥗</span> Go Explore Recipes on Home Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SECTION 4: DELIVERY PRICING & ZONES
+             ==================================================== -->
+        <section id="delivery-guide" class="guide-container-card">
+            <div class="guide-header-strip">
+                <div>
+                    <span class="section-kicker">Doorstep Service</span>
+                    <h2 class="section-title">🛵 Delivery Zones, Rates & Google Maps</h2>
+                    <p class="section-subtitle">Check your delivery fee upfront, calculate arrival times, and find physical branches.</p>
+                </div>
+                <span class="guide-badge-pill">Transparent Fees</span>
+            </div>
+
+            <div class="timeline-steps">
+                <div class="step-card">
+                    <div class="step-number-bubble">01</div>
+                    <div class="step-content">
+                        <h4>Check Delivery Rates by Governorate</h4>
+                        <p>On the <a href="contact.html#delivery-prices" style="color: #ffae00; text-decoration: underline;">Contact & Delivery Page</a>, you will find our interactive Delivery Zone Calculator:</p>
+                        <div class="step-preview-box">
+                            <span class="step-mock-tag">Flat Rates</span>
+                            <span class="step-mock-text">Cairo Central: 30 EGP | Giza: 35 EGP | New Cairo: 40 EGP | Alexandria: 45 EGP | Delta: 50 EGP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-bubble">02</div>
+                    <div class="step-content">
+                        <h4>Enjoy 100% Free Delivery on Orders Over 500 EGP</h4>
+                        <p>Any order totaling <strong>500 EGP or higher</strong> automatically qualifies for free delivery! Combine your favorite proteins and sides to unlock zero delivery fees.</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-bubble">03</div>
+                    <div class="step-content">
+                        <h4>Click the Map to Open Live Navigation on Google Maps</h4>
+                        <p>Want to pick up your food or dine in at our hubs? On the Contact page, simply click the interactive map to open the exact coordinates directly in <strong>Google Maps</strong> on your phone or desktop.</p>
+                        <a href="contact.html" class="step-interactive-btn">
+                            <span>🗺️</span> View Branches & Delivery Rates
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================================================
+             SECTION 5: HOW TO LEAVE AN OPINION
+             ==================================================== -->
+        <section id="opinions-guide" class="guide-container-card">
+            <div class="guide-header-strip">
+                <div>
+                    <span class="section-kicker">Community Voice</span>
+                    <h2 class="section-title">⭐ How to Rate & Share Your Opinion</h2>
+                    <p class="section-subtitle">We love hearing from our foodies! Share your feedback with or without a written description.</p>
+                </div>
+                <span class="guide-badge-pill">1 - 5 Stars</span>
+            </div>
+
+            <div class="timeline-steps">
+                <div class="step-card">
+                    <div class="step-number-bubble">01</div>
+                    <div class="step-content">
+                        <h4>Select 1 to 5 Stars</h4>
+                        <p>Head to the <a href="opinion.html" style="color: #ffae00; text-decoration: underline;">Customer Opinions Page</a>. Tap on the gold stars to choose your rating (from 1 Star up to 5 Stars <em>"Beast Mode Legendary!"</em>).</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-bubble">02</div>
+                    <div class="step-content">
+                        <h4>Write an Optional Description (Not Required)</h4>
+                        <p>You can write detailed feedback in the description box, or <strong>leave it completely empty</strong> if you only want to submit your star rating. It's 100% optional!</p>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-bubble">03</div>
+                    <div class="step-content">
+                        <h4>Send Directly to the Kitchen Team</h4>
+                        <p>Click <strong>"Send Opinion to Restaurant"</strong> to publish your review in the live community feed, or tap <strong>"Send via WhatsApp"</strong> to chat directly with restaurant management.</p>
+                        <a href="opinion.html" class="step-interactive-btn">
+                            <span>⭐</span> Go to Opinions Page
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>🦖 <strong>foodZILLA</strong> — The Beast of Healthy Recipes & Fast Delivery.</p>
+            <p style="margin-top: 6px;">Hotline: <a href="tel:19844">19844</a> | Built for the Afro-Asian Youth Forum 2026 - Aswan.</p>
+        </footer>
+    </div>
+
+    <!-- ========================================================
+         SIGN IN MODAL
+         ======================================================== -->
+    <div class="account-overlay" id="accountOverlay" aria-hidden="true">
+        <section class="account-panel" role="dialog" aria-modal="true" aria-labelledby="accountTitle">
+            <button class="account-close-btn" type="button" aria-label="Close" onclick="hideSignIn()">×</button>
+            <p class="account-kicker">FOODZILLA ACCOUNT</p>
+            <h2 id="accountTitle">Sign in</h2>
+            <p class="account-intro">Add your details for delivery.</p>
+            <form id="signInForm" class="account-form">
+                <label>Name
+                    <input name="name" type="text" autocomplete="name" required>
+                </label>
+                <label>Governorate
+                    <input name="governorate" type="text" autocomplete="address-level1" required>
+                </label>
+                <label>City
+                    <input name="city" type="text" autocomplete="address-level2" required>
+                </label>
+                <label>Address
+                    <input name="address" type="text" autocomplete="street-address" required>
+                </label>
+                <label>Phone number
+                    <input name="phone" type="tel" autocomplete="tel" required maxlength="11" pattern="[0-9]{10,15}">
+                </label>
+                <label>Password
+                    <span class="password-control">
+                        <input id="signInPassword" name="password" type="password" autocomplete="new-password" minlength="8" maxlength="16" required>
+                        <button class="password-toggle" id="togglePassword" type="button" aria-label="Show password" aria-pressed="false" title="Show password">
+                            <svg class="eye-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                            <svg class="eye-off-icon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="m3 3 18 18M10.6 10.6a2 2 0 0 0 2.8 2.8"/><path d="M9.9 5.2A10.8 10.8 0 0 1 12 5c6.4 0 10 7 10 7a15.8 15.8 0 0 1-3.1 3.8M6.2 6.2C3.5 8 2 12 2 12s3.6 7 10 7a10.7 10.7 0 0 0 4-.8"/></svg>
+                        </button>
+                    </span>
+                    <span class="field-hint">At least 8 characters and maximum 16 characters</span>
+                </label>
+                <p class="account-message" id="accountMessage" role="status"></p>
+                <button class="account-submit-btn" type="submit">Save details</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- ========================================================
+         CART DRAWER & OVERLAY
+         ======================================================== -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart(false)"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 My Cart</h3>
+            <button class="cart-close-btn" onclick="toggleCart(false)">×</button>
+        </div>
+
+        <section class="cart-delivery" id="cartDelivery" aria-label="Delivery details"></section>
+
+        <div class="cart-items" id="cartItemsList"></div>
+
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <div class="cart-summary-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotalPrice">0 EGP</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>Delivery Fee:</span>
+                    <span id="cartDeliveryFee">0 EGP</span>
+                </div>
+                <div class="cart-total-row">
+                    <span>Total:</span>
+                    <span id="cartTotalPrice">0 EGP</span>
+                </div>
+            </div>
+            <div class="cart-footer-buttons">
+                <button class="btn-checkout" onclick="checkoutCart()">Buy Now</button>
+                <button class="btn-clear" onclick="clearCart()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/project.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

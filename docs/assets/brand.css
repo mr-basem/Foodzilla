@@ -1,0 +1,60 @@
+/* {{NAME}} brand: colours and fonts shared by the poster, slides, diagrams and documentation.
+   Set the colours from the project's logo and app CSS (see SKILL.md, step 3).
+   The defaults are the BYTE.ME palette. Diagrams also use these hex values directly in SVG
+   attributes, so replace the same hex strings in docs/diagrams/*.html when you change them:
+   #0E1118 ink · #FF4B4C accent · #D93D3E accent-dark · #E85D04 warm · #F48C06 warm-2 · #F1F2F6 paper */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@400;600;700&display=swap');
+
+:root {
+  --ink: #0E1118;
+  /* darkest logo colour: text and the dark hero */
+  --ink-2: #1B2030;
+  --ink-soft: #3A4152;
+  --accent: #FF4B4C;
+  /* the logo's strongest colour */
+  --accent-dark: #D93D3E;
+  --warm: #E85D04;
+  /* second brand colour, e.g. the app's banner */
+  --warm-2: #F48C06;
+  --paper: #F1F2F6;
+  /* lightest logo colour: page background */
+  --white: #FFFFFF;
+  --line: rgba(14, 17, 24, 0.14);
+  --todo-bg: #FFF1A8;
+  /* student placeholder highlight */
+  --todo-line: #D9A400;
+
+  --display: 'Silkscreen', 'JetBrains Mono', monospace;
+  /* pick a display font that matches the logo's lettering */
+  --sans: 'Space Grotesk', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --arabic: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+.ar {
+  font-family: var(--arabic);
+  direction: rtl;
+  unicode-bidi: isolate;
+}
+
+/* Student placeholder: anything in this style still has to be written before printing. */
+.todo {
+  background: var(--todo-bg);
+  color: #4A3B00;
+  border: 0.18em dashed var(--todo-line);
+  border-radius: 0.35em;
+  padding: 0.12em 0.4em;
+  font-style: normal;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.todo::before {
+  content: "✏️ Student writes: ";
+  font-weight: 700;
+}
+
+.todo.block {
+  display: block;
+  padding: 0.5em 0.7em;
+}

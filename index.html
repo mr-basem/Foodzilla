@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Recipes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -13,8 +13,16 @@
          SESSION 9-10: TOP CART BUTTON & NAVBAR
          ======================================================== -->
     <nav class="top-nav">
-        <div class="top-logo">🦖 food<span>ZILLA</span></div>
+        <div class="top-logo"><a href="index.html" class="logo-link">🦖 food<span>ZILLA</span></a></div>
+        <div class="top-nav-links">
+            <a href="index.html" class="nav-link active">🏠 Home</a>
+            <a href="#categories" class="nav-link">🥗 Menu</a>
+            <a href="contact.html" class="nav-link">📞 Contact & Delivery</a>
+            <a href="opinion.html" class="nav-link">⭐ Opinions</a>
+            <a href="how-to-use.html" class="nav-link">📖 How to Use</a>
+        </div>
         <div class="top-nav-actions">
+            <a href="tel:19844" class="nav-hotline-pill" title="Call Hotline 19844">📞 19844</a>
             <button class="account-btn" id="accountButton" onclick="showSignIn()">Sign in</button>
             <button class="top-cart-btn" onclick="toggleCart()">
                 🛒 Cart <span class="cart-badge" id="cartCount">0</span>
@@ -176,8 +184,8 @@
     </div>
 
     <!-- Scripts -->
-    <script src="project.js"></script>
-    <script src="app.js"></script>
+    <script src="js/project.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
